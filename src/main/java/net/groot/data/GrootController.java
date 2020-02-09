@@ -1,4 +1,7 @@
 package net.groot.data; 
+
+
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -18,11 +21,10 @@ public class GrootController {
     private GrootService grootService;
 
     @PostMapping
-    public ResponseEntity<Void> createNewGroot(@RequestBody GrootRequest grootRequest, UriComponentsBuilder uriComponentsBuilder) {
-//        Long primaryKey = grootService.createNewGroot(grootRequest);
-    	 Long id = grootService.createNewGroot(grootRequest);
+    public ResponseEntity<Void> createNewGroot(@Valid @RequestBody GrootRequest grootRequest, UriComponentsBuilder uriComponentsBuilder) {
+        Long primaryKey = grootService.createNewGroot(grootRequest);
 
-        UriComponents uriComponents = uriComponentsBuilder.path("/api/groot/{id}").buildAndExpand(id); //(primaryKey);
+        UriComponents uriComponents = uriComponentsBuilder.path("/api/groot/{id}").buildAndExpand(primaryKey);
         HttpHeaders headers = new HttpHeaders();
         headers.setLocation(uriComponents.toUri());
 
@@ -51,3 +53,4 @@ public class GrootController {
     }
 
 }
+
