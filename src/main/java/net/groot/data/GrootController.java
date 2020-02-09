@@ -18,10 +18,11 @@ public class GrootController {
     private GrootService grootService;
 
     @PostMapping
-    public ResponseEntity<Void> createNewGroot(@Valid @RequestBody GrootRequest grootRequest, UriComponentsBuilder uriComponentsBuilder) {
-        Long primaryKey = grootService.createNewGroot(grootRequest);
+    public ResponseEntity<Void> createNewGroot(@RequestBody GrootRequest grootRequest, UriComponentsBuilder uriComponentsBuilder) {
+//        Long primaryKey = grootService.createNewGroot(grootRequest);
+    	 Long id = grootService.createNewGroot(grootRequest);
 
-        UriComponents uriComponents = uriComponentsBuilder.path("/api/groot/{id}").buildAndExpand(primaryKey);
+        UriComponents uriComponents = uriComponentsBuilder.path("/api/groot/{id}").buildAndExpand(id); //(primaryKey);
         HttpHeaders headers = new HttpHeaders();
         headers.setLocation(uriComponents.toUri());
 
