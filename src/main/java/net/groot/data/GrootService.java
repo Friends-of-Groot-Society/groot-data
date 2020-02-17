@@ -19,6 +19,8 @@ public class GrootService {
         groot.setIsbn(grootRequest.getIsbn());
         groot.setAuthor(grootRequest.getAuthor());
         groot.setTitle(grootRequest.getTitle());
+        groot.setName(grootRequest.getName());
+        groot.setType(grootRequest.getType());
 
         groot = grootRepository.save(groot);
 
@@ -54,6 +56,8 @@ public class GrootService {
         grootToUpdate.setAuthor(grootToUpdateRequest.getAuthor());
         grootToUpdate.setIsbn(grootToUpdateRequest.getIsbn());
         grootToUpdate.setTitle(grootToUpdateRequest.getTitle());
+        grootToUpdate.setName(grootToUpdateRequest.getName());
+        grootToUpdate.setType(grootToUpdateRequest.getType());
 
         return grootToUpdate;
     }

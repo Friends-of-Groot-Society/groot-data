@@ -25,6 +25,14 @@ public class Groot {
     @Column(nullable = false)
     private String author;
 
+    @Column 
+    private String name; 
+
+    @Column 
+    private String type; 
+     
+    /// 
+
 	public Long getId() {
 		return id;
 	}
@@ -57,4 +65,24 @@ public class Groot {
 		this.author = author;
 	}
 
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
+	@Override
+	public String toString() {
+		return "Groot [id=" + id + ", isbn=" + isbn + ", title=" + title + ", author=" + author + ", name=" + name
+				+ ", type=" + type + "]";
+	}
 }
