@@ -1,16 +1,14 @@
-package net.groot.services; 
+package net.groot.data; 
 
-import net.groot.beans.*;
-import net.groot.notfound.MediaNotFoundException;
-import net.groot.repositories.MediaRepository;
-import net.groot.requests.MediaRequest;
+import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.List;
-import java.util.Optional;
+import net.groot.notfound.MediaNotFoundException;
+import net.groot.requests.MediaRequest;
 
 @Service
 public class MediaService {
@@ -21,9 +19,9 @@ public class MediaService {
    
     public Long createNewMedia(MediaRequest mediaRequest) {
         Media media = new Media();
-        media.setIsbn(mediaRequest.getIsbn());
-        media.setAuthor(mediaRequest.getAuthor());
-        media.setTitle(mediaRequest.getTitle());
+        media.setUniqueId(mediaRequest.getUniqueId());
+        media.setCharacter(mediaRequest.getCharacter());
+        media.setLocation(mediaRequest.getLocation());
 
         media = mediaRepository.save(media);
 
@@ -56,9 +54,9 @@ public class MediaService {
 
         Media mediaToUpdate = mediaFromDatabase.get();
 
-        mediaToUpdate.setAuthor(mediaToUpdateRequest.getAuthor());
-        mediaToUpdate.setIsbn(mediaToUpdateRequest.getIsbn());
-        mediaToUpdate.setTitle(mediaToUpdateRequest.getTitle());
+        mediaToUpdate.setUniqueId(mediaToUpdateRequest.getUniqueId());
+        mediaToUpdate.setCharacter(mediaToUpdateRequest.getCharacter());
+        mediaToUpdate.setLocation(mediaToUpdateRequest.getLocation());
 
         return mediaToUpdate;
     }

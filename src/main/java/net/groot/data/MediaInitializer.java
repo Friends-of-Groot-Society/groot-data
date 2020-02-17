@@ -1,4 +1,4 @@
-package net.groot.initializers;
+package net.groot.data;
  
 
 import java.util.UUID;
@@ -8,10 +8,8 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 import com.github.javafaker.Faker;
-import lombok.Setter;
+
 import lombok.extern.slf4j.Slf4j;
-import net.groot.beans.Media;
-import net.groot.repositories.MediaRepository;
 
 @Slf4j
 @Component
@@ -29,14 +27,13 @@ public class MediaInitializer implements CommandLineRunner {
 
         for(int i = 0; i < 10; i++) {
 
-            Media media = new Media(); 
-//            media.setTitle("War and Peace");
-//            media.setAuthor("Tolstoy");
-//            media.setIsbn("67868687222278");
+            Media media = new Media();  
             
-            media.setTitle(faker.book().title());
-            media.setAuthor(faker.book().author());
-            media.setIsbn(UUID.randomUUID().toString());
+            media.setUniqueId(UUID.randomUUID().toString());
+            media.setCharacter(faker.hobbit().character());
+            media.setLocation(faker.hobbit().location()); 
+            media.setThorinsCompany(faker.hobbit().thorinsCompany()); 
+            media.setQuote(faker.hobbit().quote()); 
 
             mediaRepository.save(media);
         }

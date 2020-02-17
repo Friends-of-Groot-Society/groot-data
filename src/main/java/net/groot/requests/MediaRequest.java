@@ -12,48 +12,50 @@ public class MediaRequest {
 		super();
 	}
 
-	public MediaRequest(@NotEmpty String title, @NotEmpty @Size(max = 20) String isbn, @NotEmpty String author) {
+	public MediaRequest(@NotEmpty String location, @NotEmpty @Size(max = 20) String uniqueId, @NotEmpty String character) {
 		super();
-		this.title = title;
-		this.isbn = isbn;
-		this.author = author;
+		this.location = location;
+		this.uniqueId = uniqueId;
+		this.character = character;
 	}
 
 	@NotEmpty
-    private String title;
+    private String location;
 
     @NotEmpty
     @Size(max = 20)
-    private String isbn;
+    private String uniqueId;
 
     @NotEmpty
-    private String author;
+    private String character;
 
-	public String getAuthor() {
+	public String getCharacter() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	public String getIsbn() {
+	public String getUniqueId() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	public String getTitle() {
+	public String getLocation() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	public void setTitle(String title) {
-		this.title = title;
+	public void setLocation(String location) {
+		this.location = location;
 	}
 
-	public void setIsbn(String isbn) {
-		this.isbn = isbn;
+	public void setUniqueId(String uniqueId) {
+		this.uniqueId = uniqueId;
 	}
 
-	public void setAuthor(String author) {
-		this.author = author;
+	public void setCharacter(String character) {
+		this.character = character;
 	}
+ 
+ 
 	
 }
