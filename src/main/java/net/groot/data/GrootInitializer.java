@@ -31,9 +31,11 @@ public class GrootInitializer implements CommandLineRunner {
 //            groot.setAuthor("Tolstoy");
 //            groot.setIsbn("67868687222278");
             
+            groot.setIsbn(UUID.randomUUID().toString());
             groot.setTitle(faker.book().title());
             groot.setAuthor(faker.book().author());
-            groot.setIsbn(UUID.randomUUID().toString());
+            groot.setName(faker.book().publisher());
+            groot.setType(faker.book().genre());
 
             grootRepository.save(groot);
         }
