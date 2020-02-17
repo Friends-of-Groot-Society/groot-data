@@ -28,7 +28,8 @@ public class GrootService {
     public List<Groot> getAllGroots() {
         return grootRepository.findAll();
     }
-
+ 
+    
     public Groot getGrootById(Long id) {
         Optional<Groot> requestedGroot = grootRepository.findById(id);
 
