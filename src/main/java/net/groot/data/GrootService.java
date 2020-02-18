@@ -1,17 +1,21 @@
 package net.groot.data; 
 
+import java.util.List;
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.List;
-import java.util.Optional;
+import net.groot.data.Groot;
+import net.groot.data.GrootRequest;
+import net.groot.notfound.GrootNotFoundException;
 
 @Service
 public class GrootService {
 
     @Autowired
-    private GrootRepository grootRepository;
+    private net.groot.data.GrootRepository grootRepository;
     
    
     public Long createNewGroot(GrootRequest grootRequest) {
@@ -35,7 +39,7 @@ public class GrootService {
     public Groot getGrootById(Long id) {
         Optional<Groot> requestedGroot = grootRepository.findById(id);
 
-        if (requestedGroot.empty() != null) {
+        if (requestedGroot.empty() == null) {
             throw new GrootNotFoundException(String.format("Groot with id: '%s' not found", id));
         }
 

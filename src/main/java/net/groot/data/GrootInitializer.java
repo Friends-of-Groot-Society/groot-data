@@ -7,7 +7,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 import com.github.javafaker.Faker;
-import lombok.Setter;
+
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
