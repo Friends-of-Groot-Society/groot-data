@@ -25,7 +25,7 @@ The mission of the app is to organize and persist Groot Fan Club News and Guardi
 |-----------------|:-----------------:|---------:|
 | Database | Oracle SE 11 | [Oracle]  | 
 | Cloud Data | Amazon RDS |  [AWS-RDS] | 
-| Cloud ASsets | Amazon S3 |  [AWS-S3]  |
+| Cloud Assets | Amazon S3 |  [AWS-S3]  |
 | User Data | Angular 8 |  [Angular]  |
 | UI/UX | Angular-Bootstrap |  [BS4] |
 | E2E Testing | Selenium | [Selenium] |
@@ -74,39 +74,32 @@ As an society-administrator, I can add news-bulletins.
 As an society-administrator, I can add notes about Groot and the Guardians.
 As an society-administrator, I add notes about Groot and the Guardians news-bulletins.
 As an society-administrator, I can view my upcoming news-bulletins.
-As an society-administrator, I can view information about the client.
+As an society-administrator, I can view information about members.
 As an society-administrator, I can view information about Groot and the Guardians.
 As an society-administrator, I can add society-member (fan)s.
-As an society-administrator, I can add pets to the society-member (fan)
+As an society-administrator, I can add fans to the society-member (fan)
 As an society-administrator, I can add vaccinations to an pet
 As an society-administrator, I can view the weights of Groot and the Guardians on the dates of their news-bulletins.
 -----------
 As a society-member (fan), I can login to an account.
-As a society-member (fan), I can fill out a form with my information.
-As a society-member (fan), I can see notes on what my pet was treated for.
-As a society-member (fan), I can view a list of my owned pets.
-As a society-member (fan), I add a new pet.
+As a society-member (fan), I can fill out a form with my information. 
+As a society-member (fan), I can view a list of my characters.
+As a society-member (fan), I add a new character.
 As a society-member (fan) I can book an news-bulletins    
-As a society-member (fan), I can upload relevant documents about my dog into the system.
-As a society-member (fan), I download copies of my vaccination/health records.
-As a society-member (fan), I can see the age of my pet. 
---------------
-As a system, it will notify us in some way if the vaccination record has expired.
-As a system, it will notify us if the vaccination record will expire before the scheduled visit.
+As a society-member (fan), I can upload relevant documents about my favorite characters into the system. 
+-------------- 
 ```
  
 ** Software **
 
-* [Oracle]: <https://www.oracle.com/database/technologies/112010-win64soft.html>
-* [AWS-RDS]: <https://aws.amazon.com/rds/>
-* [AWS-S3]: <https://aws.amazon.com/s3/>
-* [Angular]: <https://angular.io/>
-* [BS4]: <https://numpy.org/>
-* [Selenium]: <https://selenium.dev/documentation/en/>
-* [Jenkins]: <https://jenkins.io/> 
-* [CodeBuild]:<https://aws.amazon.com/codebuild/> 
-   
-  website: [doggywood.io](http://doggywood.s3-website-us-east-1.amazonaws.com/t)
+ [Oracle]: <https://www.oracle.com/database/technologies/112010-win64soft.html>
+ [AWS-RDS]: <https://aws.amazon.com/rds/>
+ [AWS-S3]: <https://aws.amazon.com/s3/>
+ [Angular]: <https://angular.io/>
+ [BS4]: <https://numpy.org/>
+ [Selenium]: <https://selenium.dev/documentation/en/>
+ [Jenkins]: <https://jenkins.io/> 
+ [CodeBuild]:<https://aws.amazon.com/codebuild/> 
  
 
 #### URLS for Angular/Material:
@@ -114,49 +107,5 @@ As a system, it will notify us if the vaccination record will expire before the 
 #### https://angular.io 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.21. 
 
-
-### INSTRUCITONS:  Development server
  
-## JSON SERVER
-npm install -g json-server
-json-server info.json --watch
-
- 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
- 
-
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.21.
-
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
