@@ -30,7 +30,6 @@ import org.springframework.test.web.servlet.MockMvc;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import net.groot.notfound.MediaNotFoundException;
-import net.groot.requests.MediaRequest;
 
 @ExtendWith(SpringExtension.class)
 @WebMvcTest(MediaController.class)
@@ -55,6 +54,8 @@ public class MediaControllerTest {
         mediaRequest.setLocation("Media A.");
         mediaRequest.setUniqueId("1337");
         mediaRequest.setCharacter("Guardians 11");
+        mediaRequest.setThorinsCompany("THORIN11");
+        mediaRequest.setQuote("QUTATION");
 
         when(mediaService.createNewMedia(mediaRequestArgumentCaptor.capture())).thenReturn(1L);
 
@@ -69,6 +70,8 @@ public class MediaControllerTest {
         assertThat(mediaRequestArgumentCaptor.getValue().getLocation(), is("Media A."));
         assertThat(mediaRequestArgumentCaptor.getValue().getUniqueId(), is("1337"));
         assertThat(mediaRequestArgumentCaptor.getValue().getCharacter(), is("Guardians 11"));
+        assertThat(mediaRequestArgumentCaptor.getValue().getThorinsCompany(), is("THORIN11"));
+        assertThat(mediaRequestArgumentCaptor.getValue().getQuote(), is("QUTATION"));
 
     }
 
@@ -76,8 +79,8 @@ public class MediaControllerTest {
     public void allMediasEndpointShouldReturnTwoMedias() throws Exception {
 
         when(mediaService.getAllMedias()).thenReturn(Arrays.asList(     //List.of( // ERROR?
-                createMedia(1L, "Guardians 11", "Media A.", "1337"),
-                createMedia(2L, "Guardians EE 8", "Media A.", "1338")));
+                createMedia(1L, "Guardians 11", "Media A.", "1337", "THORIN11", "QUTATION"),
+                createMedia(2L, "Guardians EE 8", "Media A.", "1338", "THORIN22", "QUTATION22")));
 
         this.mockMvc
                 .perform(get("/api/media"))
@@ -87,6 +90,8 @@ public class MediaControllerTest {
                 .andExpect(jsonPath("$[0].character", is("Guardians 11")))
                 .andExpect(jsonPath("$[0].location", is("Media A.")))
                 .andExpect(jsonPath("$[0].uniqueId", is("1337")))
+                .andExpect(jsonPath("$[0].thorinsCompany", is("THORIN11")))
+                .andExpect(jsonPath("$[0].quote", is("QUTATION")))
                 .andExpect(jsonPath("$[0].id", is(1)));
 
     }
@@ -94,7 +99,7 @@ public class MediaControllerTest {
     @Test
     public void getMediaWithIdOneShouldReturnAMedia() throws Exception {
 
-        when(mediaService.getMediaById(1L)).thenReturn(createMedia(1L, "Guardians 11", "Media A.", "1337"));
+        when(mediaService.getMediaById(1L)).thenReturn(createMedia(1L, "Guardians 11", "Media A.", "1337", "THORIN11", "QUTATION"));
 
         this.mockMvc
                 .perform(get("/api/media/1"))
@@ -103,6 +108,8 @@ public class MediaControllerTest {
                 .andExpect(jsonPath("$.character", is("Guardians 11")))
                 .andExpect(jsonPath("$.location", is("Media A.")))
                 .andExpect(jsonPath("$.uniqueId", is("1337")))
+                .andExpect(jsonPath("$.thorinsCompany", is("THORIN11")))
+                .andExpect(jsonPath("$.quote", is("QUTATION")))
                 .andExpect(jsonPath("$.id", is(1)));
 
     }
@@ -125,9 +132,11 @@ public class MediaControllerTest {
         mediaRequest.setLocation("Media A.");
         mediaRequest.setUniqueId("1337");
         mediaRequest.setCharacter("Guardians 12");
+        mediaRequest.setThorinsCompany("THORIN11");
+        mediaRequest.setQuote("QUTATION");
 
         when(mediaService.updateMedia(eq(1L), mediaRequestArgumentCaptor.capture()))
-                .thenReturn(createMedia(1L, "Guardians 12", "Media A.", "1337"));
+                .thenReturn(createMedia(1L, "Guardians 12", "Media A.", "1337", "THORIN11", "QUTATION"));
 
         this.mockMvc
                 .perform(put("/api/media/1")
@@ -138,11 +147,15 @@ public class MediaControllerTest {
                 .andExpect(jsonPath("$.character", is("Guardians 12")))
                 .andExpect(jsonPath("$.location", is("Media A.")))
                 .andExpect(jsonPath("$.uniqueId", is("1337")))
+                .andExpect(jsonPath("$.thorinsCompany", is("THORIN11")))
+                .andExpect(jsonPath("$.quote", is("QUTATION")))
                 .andExpect(jsonPath("$.id", is(1)));
 
         assertThat(mediaRequestArgumentCaptor.getValue().getLocation(), is("Media A."));
         assertThat(mediaRequestArgumentCaptor.getValue().getUniqueId(), is("1337"));
         assertThat(mediaRequestArgumentCaptor.getValue().getCharacter(), is("Guardians 12"));
+        assertThat(mediaRequestArgumentCaptor.getValue().getThorinsCompany(), is("THORIN11"));
+        assertThat(mediaRequestArgumentCaptor.getValue().getQuote(), is("QUTATION"));
 
     }
 
@@ -153,6 +166,8 @@ public class MediaControllerTest {
         mediaRequest.setLocation("Media A.");
         mediaRequest.setUniqueId("1337");
         mediaRequest.setCharacter("Guardians 12");
+        mediaRequest.setThorinsCompany("THORIN11");
+        mediaRequest.setQuote("QUTATION");
 
         when(mediaService.updateMedia(eq(42L), mediaRequestArgumentCaptor.capture()))
                 .thenThrow(new MediaNotFoundException("The media with id '42' was not found"));
@@ -165,11 +180,13 @@ public class MediaControllerTest {
 
     }
 
-    private Media createMedia(Long id, String character, String location, String uniqueId) {
+    private Media createMedia(Long id, String character, String location, String uniqueId, String thorinsCompany, String quote) {
         Media media = new Media();
         media.setLocation(location);
         media.setUniqueId(uniqueId);
         media.setCharacter(character);
+        media.setThorinsCompany(thorinsCompany);
+        media.setQuote(quote);
         media.setId(id);
         return media;
     }

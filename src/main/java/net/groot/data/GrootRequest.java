@@ -12,7 +12,7 @@ public class GrootRequest {
 		super();
 	}
 
-	public GrootRequest(@NotEmpty String title, @NotEmpty @Size(max = 20) String isbn, @NotEmpty String author, @NotEmpty String name, @NotEmpty String type) {
+	public GrootRequest(@NotEmpty String title, @NotEmpty @Size(max =80) String isbn, @NotEmpty String author, @NotEmpty String name, @NotEmpty String type) {
 		super();
 		this.title = title;
 		this.isbn = isbn;
@@ -26,7 +26,7 @@ public class GrootRequest {
     private String title;
 
     @NotEmpty
-    @Size(max = 20)
+    @Size(max = 80)
     private String isbn;
 
     @NotEmpty
@@ -39,19 +39,16 @@ public class GrootRequest {
     private String type;
     
 
-	public String getAuthor() {
-		// TODO Auto-generated method stub
-		return null;
+	public String getAuthor() { 
+		return author;
 	}
 
-	public String getIsbn() {
-		// TODO Auto-generated method stub
-		return null;
+	public String getIsbn() { 
+		return isbn;
 	}
 
-	public String getTitle() {
-		// TODO Auto-generated method stub
-		return null;
+	public String getTitle() { 
+		return title;
 	}
 
 	public void setTitle(String title) {

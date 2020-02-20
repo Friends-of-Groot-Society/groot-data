@@ -7,8 +7,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import net.groot.data.Media;
+import net.groot.data.MediaRepository;
+import net.groot.data.MediaRequest;
 import net.groot.notfound.MediaNotFoundException;
-import net.groot.requests.MediaRequest;
 
 @Service
 public class MediaService {
@@ -22,6 +24,9 @@ public class MediaService {
         media.setUniqueId(mediaRequest.getUniqueId());
         media.setCharacter(mediaRequest.getCharacter());
         media.setLocation(mediaRequest.getLocation());
+        media.setThorinsCompany(mediaRequest.getThorinsCompany());
+        media.setQuote(mediaRequest.getQuote());
+
 
         media = mediaRepository.save(media);
 
@@ -57,6 +62,9 @@ public class MediaService {
         mediaToUpdate.setUniqueId(mediaToUpdateRequest.getUniqueId());
         mediaToUpdate.setCharacter(mediaToUpdateRequest.getCharacter());
         mediaToUpdate.setLocation(mediaToUpdateRequest.getLocation());
+        mediaToUpdate.setThorinsCompany(mediaToUpdateRequest.getThorinsCompany());
+        mediaToUpdate.setQuote(mediaToUpdateRequest.getQuote());
+
 
         return mediaToUpdate;
     }
