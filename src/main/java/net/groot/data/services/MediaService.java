@@ -1,4 +1,4 @@
-package net.groot.data; 
+package net.groot.data.services; 
 
 import java.util.List;
 import java.util.Optional;
@@ -7,10 +7,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import net.groot.data.Media;
-import net.groot.data.MediaRepository;
-import net.groot.data.MediaRequest;
-import net.groot.notfound.MediaNotFoundException;
+import net.groot.data.entities.Media;
+import net.groot.data.notfound.MediaNotFoundException;
+import net.groot.data.repositories.MediaRepository;
+import net.groot.data.requests.MediaRequest;
 
 @Service
 public class MediaService {

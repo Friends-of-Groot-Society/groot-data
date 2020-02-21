@@ -9,6 +9,8 @@ import org.springframework.stereotype.Component;
 import com.github.javafaker.Faker;
 
 import lombok.extern.slf4j.Slf4j;
+import net.groot.data.entities.Groot;
+import net.groot.data.repositories.GrootRepository;
 
 @Slf4j
 @Component

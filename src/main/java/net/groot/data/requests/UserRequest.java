@@ -1,4 +1,4 @@
-package net.groot.data;
+package net.groot.data.requests;
  
 import lombok.Data;
 
@@ -6,13 +6,13 @@ import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 
 @Data
-public class GrootRequest {
+public class UserRequest {
 
-    public GrootRequest() {
+    public UserRequest() {
 		super();
 	}
 
-	public GrootRequest(@NotEmpty String title, @NotEmpty @Size(max =80) String isbn, @NotEmpty String author, @NotEmpty String name, @NotEmpty String type) {
+	public UserRequest(@NotEmpty String title, @NotEmpty @Size(max =80) String isbn, @NotEmpty String author, @NotEmpty String name, @NotEmpty String type) {
 		super();
 		this.title = title;
 		this.isbn = isbn;

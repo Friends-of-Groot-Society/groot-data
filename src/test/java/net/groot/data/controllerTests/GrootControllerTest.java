@@ -1,4 +1,4 @@
-package net.groot.data;
+package net.groot.data.controllerTests;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.hasSize;
@@ -29,7 +29,11 @@ import org.springframework.test.web.servlet.MockMvc;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import net.groot.notfound.GrootNotFoundException;
+import net.groot.data.controllers.GrootController;
+import net.groot.data.entities.Groot;
+import net.groot.data.notfound.GrootNotFoundException;
+import net.groot.data.requests.GrootRequest;
+import net.groot.data.services.GrootService;
 
 @ExtendWith(SpringExtension.class)
 @WebMvcTest(GrootController.class)

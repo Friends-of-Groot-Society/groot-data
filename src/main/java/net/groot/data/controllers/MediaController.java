@@ -1,4 +1,4 @@
-package net.groot.data; 
+package net.groot.data.controllers; 
 
 
 
@@ -22,19 +22,23 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponents;
 import org.springframework.web.util.UriComponentsBuilder;
 
+import net.groot.data.entities.Media;
+import net.groot.data.requests.MediaRequest;
+import net.groot.data.services.MediaService;
+
 @RestController
 @CrossOrigin
-@RequestMapping("/api/groot")
-public class GrootController {
+@RequestMapping("/api/media")
+public class MediaController {
 
     @Autowired
-    private GrootService grootService;
+    private MediaService mediaService;
 
     @PostMapping
-    public ResponseEntity<Void> createNewGroot(@Valid @RequestBody GrootRequest grootRequest, UriComponentsBuilder uriComponentsBuilder) {
-        Long primaryKey = grootService.createNewGroot(grootRequest);
+    public ResponseEntity<Void> createNewMedia(@Valid @RequestBody MediaRequest mediaRequest, UriComponentsBuilder uriComponentsBuilder) {
+        Long primaryKey = mediaService.createNewMedia(mediaRequest);
 
-        UriComponents uriComponents = uriComponentsBuilder.path("/api/groot/{id}").buildAndExpand(primaryKey);
+        UriComponents uriComponents = uriComponentsBuilder.path("/api/media/{id}").buildAndExpand(primaryKey);
         HttpHeaders headers = new HttpHeaders();
         headers.setLocation(uriComponents.toUri());
 
@@ -42,23 +46,23 @@ public class GrootController {
     }
 
     @GetMapping
-    public ResponseEntity<List<Groot>> getAllGroots() {
-        return ResponseEntity.ok(grootService.getAllGroots());
+    public ResponseEntity<List<Media>> getAllMedias() {
+        return ResponseEntity.ok(mediaService.getAllMedias());
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Groot> getGrootById(@PathVariable("id") Long id) {
-        return ResponseEntity.ok(grootService.getGrootById(id));
+    public ResponseEntity<Media> getMediaById(@PathVariable("id") Long id) {
+        return ResponseEntity.ok(mediaService.getMediaById(id));
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Groot> updateGroot(@PathVariable("id") Long id, @Valid @RequestBody GrootRequest grootRequest) {
-        return ResponseEntity.ok(grootService.updateGroot(id, grootRequest));
+    public ResponseEntity<Media> updateMedia(@PathVariable("id") Long id, @Valid @RequestBody MediaRequest mediaRequest) {
+        return ResponseEntity.ok(mediaService.updateMedia(id, mediaRequest));
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteGroot(@PathVariable("id") Long id) {
-        grootService.deleteGrootById(id);
+    public ResponseEntity<Void> deleteMedia(@PathVariable("id") Long id) {
+        mediaService.deleteMediaById(id);
         return ResponseEntity.ok().build();
     }
 

@@ -1,4 +1,4 @@
-package net.groot.data;
+package net.groot.data.requests;
  
 import lombok.Data;
 

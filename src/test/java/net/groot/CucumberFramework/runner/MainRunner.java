@@ -9,7 +9,7 @@ import cucumber.api.junit.Cucumber;
 
 @CucumberOptions (
 	features = {"src/test/java/net/groot/CucumberFramework/featureFiles"},
-	glue = {"CucumberFramework.stepFiles"},
+	glue = {"src/test/java/net/groot/CucumberFramework.stepFiles"},
 	monochrome = true,
 	plugin = {"pretty", "html:target/cucumber", 
 			"json:target/cucumber.json", 

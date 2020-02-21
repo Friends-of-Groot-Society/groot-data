@@ -15,21 +15,23 @@
 #<> (placeholder)
 #""
 ## (Comments)
-#Login Feature Definition Template
+#Sample Feature Definition Template
 
 @tag
-Feature: Login into Groot account
-	Existing Groot member should be able to login into account using correct credentials
+Feature: Register as a member
+  Online person should be able to register with just email, password, first and last name.
 
-		@tag1
-		Scenario: Login into account with correct details
-			Given User navigates to groot website
-			And User clicks on the login button on homepage
-			And User enters a valid username
-			And User enters a valid password
-			When User clicks on the login button
-			Then User should be taken to the successful post login page  
-		
+  @tag1
+  Scenario: Register with email, password, first and last name.
+    Given User navigates to groot website
+    And User clicks on the register button on homepage
+    And User provides a valid email
+    And User provides a valid password
+    And User provides a first name
+    And User provides a last name
+    When User clicks on submit button
+    Then User should be taken to the successful landing page 
+
   #@tag2
   #Scenario Outline: Title of your scenario outline
     #Given I want to write a step with <name>

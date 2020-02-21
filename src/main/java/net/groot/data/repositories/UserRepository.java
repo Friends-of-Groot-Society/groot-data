@@ -1,8 +1,10 @@
-package net.groot.data;
+package net.groot.data.repositories;
 
 // JpaRepository extends PagingAndSortingRepository which in turn extends CrudRepository.
 import org.springframework.data.jpa.repository.JpaRepository;
+ 
+import net.groot.data.entities.User;
 
-public interface MediaRepository extends JpaRepository<Media, Long> {
+public interface UserRepository extends JpaRepository<User, Long> {
 
 }

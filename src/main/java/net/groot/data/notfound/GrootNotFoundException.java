@@ -1,4 +1,4 @@
-package net.groot.notfound;
+package net.groot.data.notfound;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
