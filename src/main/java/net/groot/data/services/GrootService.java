@@ -1,4 +1,4 @@
-package net.groot.data; 
+package net.groot.data.services; 
 
 import java.util.List;
 import java.util.Optional;
@@ -7,15 +7,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import net.groot.data.Groot;
-import net.groot.data.GrootRequest;
-import net.groot.notfound.GrootNotFoundException;
+import net.groot.data.entities.Groot;
+import net.groot.data.notfound.GrootNotFoundException;
+import net.groot.data.requests.GrootRequest;
 
 @Service
 public class GrootService {
 
     @Autowired
-    private net.groot.data.GrootRepository grootRepository;
+    private net.groot.data.repositories.GrootRepository grootRepository;
     
    
     public Long createNewGroot(GrootRequest grootRequest) {

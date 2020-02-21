@@ -1,4 +1,4 @@
-package net.groot.data;
+package net.groot.data.controllerTests;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.hasSize;
@@ -29,7 +29,11 @@ import org.springframework.test.web.servlet.MockMvc;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import net.groot.notfound.MediaNotFoundException;
+import net.groot.data.controllers.MediaController;
+import net.groot.data.entities.Media;
+import net.groot.data.notfound.MediaNotFoundException;
+import net.groot.data.requests.MediaRequest;
+import net.groot.data.services.MediaService;
 
 @ExtendWith(SpringExtension.class)
 @WebMvcTest(MediaController.class)
@@ -122,7 +126,6 @@ public class MediaControllerTest {
         this.mockMvc
                 .perform(get("/api/media/1"))
                 .andExpect(status().isNotFound());
-
     }
 
     @Test

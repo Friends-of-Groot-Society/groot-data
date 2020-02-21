@@ -1,7 +1,6 @@
-package net.groot.data; 
+package net.groot.data.controllers; 
 
-
-
+ 
 import java.util.List;
 
 import javax.validation.Valid;
@@ -22,23 +21,23 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponents;
 import org.springframework.web.util.UriComponentsBuilder;
 
-import net.groot.data.Media;
-import net.groot.data.MediaRequest;
-import net.groot.data.MediaService;
+import net.groot.data.entities.User;
+import net.groot.data.requests.UserRequest;
+import net.groot.data.services.UserService;
 
 @RestController
 @CrossOrigin
-@RequestMapping("/api/media")
-public class MediaController {
+@RequestMapping("/api/user")
+public class UserController {
 
     @Autowired
-    private MediaService mediaService;
+    private UserService userService;
 
     @PostMapping
-    public ResponseEntity<Void> createNewMedia(@Valid @RequestBody MediaRequest mediaRequest, UriComponentsBuilder uriComponentsBuilder) {
-        Long primaryKey = mediaService.createNewMedia(mediaRequest);
+    public ResponseEntity<Void> createNewUser(@Valid @RequestBody UserRequest userRequest, UriComponentsBuilder uriComponentsBuilder) {
+        Long primaryKey = userService.createNewUser(userRequest);
 
-        UriComponents uriComponents = uriComponentsBuilder.path("/api/media/{id}").buildAndExpand(primaryKey);
+        UriComponents uriComponents = uriComponentsBuilder.path("/api/user/{id}").buildAndExpand(primaryKey);
         HttpHeaders headers = new HttpHeaders();
         headers.setLocation(uriComponents.toUri());
 
@@ -46,23 +45,23 @@ public class MediaController {
     }
 
     @GetMapping
-    public ResponseEntity<List<Media>> getAllMedias() {
-        return ResponseEntity.ok(mediaService.getAllMedias());
+    public ResponseEntity<List<User>> getAllUsers() {
+        return ResponseEntity.ok(userService.getAllUsers());
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Media> getMediaById(@PathVariable("id") Long id) {
-        return ResponseEntity.ok(mediaService.getMediaById(id));
+    public ResponseEntity<User> getUserById(@PathVariable("id") Long id) {
+        return ResponseEntity.ok(userService.getUserById(id));
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Media> updateMedia(@PathVariable("id") Long id, @Valid @RequestBody MediaRequest mediaRequest) {
-        return ResponseEntity.ok(mediaService.updateMedia(id, mediaRequest));
+    public ResponseEntity<User> updateUser(@PathVariable("id") Long id, @Valid @RequestBody UserRequest userRequest) {
+        return ResponseEntity.ok(userService.updateUser(id, userRequest));
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteMedia(@PathVariable("id") Long id) {
-        mediaService.deleteMediaById(id);
+    public ResponseEntity<Void> deleteUser(@PathVariable("id") Long id) {
+        userService.deleteUserById(id);
         return ResponseEntity.ok().build();
     }
 

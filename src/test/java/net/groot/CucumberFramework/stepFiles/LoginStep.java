@@ -16,7 +16,7 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import org.junit.Assert;
 
-public class Login {
+public class LoginStep {
 	WebDriver driver;
 	
 	 
@@ -76,13 +76,13 @@ public class Login {
 	@When("^User clicks on the login button$")
 	public void user_clicks_on_the_login_button() throws Throwable {
 //		driver.findElement(By.xpath(".//*[@id='submit-button']")).click();
-		driver.findElement(By.id("submit-button")).click();
+		driver.findElement(By.id("Sign In")).click();
 	}
 
-	@Then("^User should be taken to the successful login page$")
-	public void user_should_be_taken_to_the_successful_login_page() throws Throwable {
+	@Then("^User should be taken to the successful post login page$")
+	public void user_should_be_taken_to_the_successful_post_login_page() throws Throwable {
 		Thread.sleep(3000);
-		WebElement askButton = driver.findElement(By.xpath("//a[contains(text(), ' ')]"));
-		Assert.assertEquals(true, askButton.isDisplayed());
-	}
+		WebElement button = driver.findElement(By.xpath("//a[contains(text(), ' ')]"));
+		Assert.assertEquals(true, button.isDisplayed());
+	} 
 }
