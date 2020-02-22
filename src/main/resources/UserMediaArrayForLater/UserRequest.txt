@@ -3,6 +3,8 @@ package net.groot.data.requests;
 import lombok.Data;
 import net.groot.data.entities.Media;
 
+import java.util.ArrayList;
+
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 
@@ -14,7 +16,7 @@ public class UserRequest {
 	}
  
     public UserRequest(@NotEmpty String email, @NotEmpty String password, @NotEmpty String fName, @NotEmpty String lName,
-    		String memberSince, String groupType, Media media) {
+    		String memberSince, String groupType, ArrayList<Media> media) {
     	super();
     	this.email = email;
     	this.password = password;
@@ -41,7 +43,7 @@ public class UserRequest {
 
     private String groupType;
 
-    private  Media media;
+    private  ArrayList<Media> media;
 
 	public String getEmail() {
 		return email;
@@ -91,11 +93,11 @@ public class UserRequest {
 		this.groupType = groupType;
 	}
 
-	public Media getMedia() {
+	public ArrayList<Media> getMedia() {
 		return media;
 	}
 
-	public void setMedia(Media media) {
+	public void setMedia(ArrayList<Media> media) {
 		this.media = media;
 	}
      
