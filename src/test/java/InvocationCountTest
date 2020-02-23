@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Suite" parallel="false">
+  <test name="Test">
+  
+  	<parameter name="env" value="QA" />
+  	<parameter name="browser" value="chrome" />
+    <parameter name="url" value="http://localhost:4200" />
+    
+    <classes>
+      <class name="net.groot.data.InvocationCountTest"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

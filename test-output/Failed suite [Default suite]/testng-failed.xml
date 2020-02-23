@@ -1,0 +1,68 @@
+
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Failed suite [Default suite]]">
+  <test verbose="2" name="Default test">
+    <classes>
+      <class name="net.groot.data.TestNgFeatures"/>
+    </classes>
+  </test> <!-- Default test -->
+  <test name="Default test(failed)">
+    <classes>
+      <class name="net.groot.data.TestNgFeatures">
+        <methods>
+          <include name="passInPassword"/>
+          <include name="afterSuite"/>
+          <include name="beforeClass"/>
+          <include name="afterMethod"/>
+          <include name="afterTest"/>
+          <include name="afterClass"/>
+          <include name="beforeSuite"/>
+          <include name="beforeMethod"/>
+          <include name="beforeTest"/>
+          <include name="passInEmail"/>
+        </methods>
+      </class> <!-- net.groot.data.TestNgFeatures -->
+    </classes>
+  </test> <!-- Default test(failed) -->
+  <test name="Default test(failed)">
+    <classes>
+      <class name="net.groot.data.TestNgFeatures">
+        <methods>
+          <include name="afterSuite"/>
+          <include name="afterClass"/>
+          <include name="beforeSuite"/>
+          <include name="beforeMethod"/>
+          <include name="confirm"/>
+          <include name="beforeTest"/>
+          <include name="beforeTest"/>
+          <include name="passInPassword"/>
+          <include name="beforeClass"/>
+          <include name="beforeClass"/>
+          <include name="afterMethod"/>
+          <include name="afterTest"/>
+          <include name="findLoginPage"/>
+          <include name="passInEmail"/>
+        </methods>
+      </class> <!-- net.groot.data.TestNgFeatures -->
+    </classes>
+  </test> <!-- Default test(failed) -->
+  <test name="Default test(failed)(failed)">
+    <classes>
+      <class name="net.groot.data.TestNgFeatures">
+        <methods>
+          <include name="passInPassword"/>
+          <include name="afterSuite"/>
+          <include name="beforeClass"/>
+          <include name="beforeClass"/>
+          <include name="afterMethod"/>
+          <include name="afterTest"/>
+          <include name="afterClass"/>
+          <include name="beforeSuite"/>
+          <include name="beforeMethod"/>
+          <include name="beforeTest"/>
+          <include name="beforeTest"/>
+          <include name="passInEmail"/>
+        </methods>
+      </class> <!-- net.groot.data.TestNgFeatures -->
+    </classes>
+  </test> <!-- Default test(failed)(failed) -->
+</suite> <!-- Failed suite [Failed suite [Default suite]] -->
