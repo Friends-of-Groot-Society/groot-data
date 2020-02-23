@@ -1,5 +1,6 @@
 package net.groot.data;
 
+import java.util.ArrayList;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,27 +23,38 @@ public class UserInitializer implements CommandLineRunner {
 	private UserRepository userRepository;
 
 	@Autowired
-	private UserRepository mediaRepository;
+	private MediaRepository mediaRepository;
 
 	@Override
 	public void run(String... args) throws Exception {
 
 		Faker faker = new Faker();
 
-//        log.info("Starting user initialization ...");
+        log.info("Starting user initialization ...");
 
 		for (int i = 0; i < 10; i++) {
 
 			User user = new User();
-
-			Media media = new Media();
-
-			media.setUniqueId(UUID.randomUUID().toString());
-			media.setCharacter(faker.hobbit().character());
-			media.setLocation(faker.hobbit().location());
-			media.setThorinsCompany(faker.hobbit().thorinsCompany());
-			media.setQuote(faker.hobbit().quote());
-			mediaRepository.save(media);
+			
+			Media medium = new Media();
+			medium.setUniqueId(UUID.randomUUID().toString());
+			medium.setCharacter(faker.hobbit().character());
+			medium.setLocation(faker.hobbit().location());
+			medium.setThorinsCompany(faker.hobbit().thorinsCompany());
+			medium.setQuote(faker.hobbit().quote());
+			mediaRepository.save(medium);
+			
+			Media medium2 = new Media();
+			medium2.setUniqueId(UUID.randomUUID().toString());
+			medium2.setCharacter(faker.hobbit().character());
+			medium2.setLocation(faker.hobbit().location());
+			medium2.setThorinsCompany(faker.hobbit().thorinsCompany());
+			medium2.setQuote(faker.hobbit().quote());
+			mediaRepository.save(medium2);
+			
+			ArrayList<Media> media = new ArrayList();
+			media.add(medium);
+			media.add(medium2);
 			
 			user.setEmail(faker.internet().emailAddress());
 			user.setPassword(faker.internet().password());

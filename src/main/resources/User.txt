@@ -4,17 +4,19 @@ package net.groot.data.entities;
 import lombok.Data;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 
 @Data
 @Entity
-public class User  implements Serializable { 
+public class User   { 
 	private static final long serialVersionUID = 1L;
 	
     @Id
@@ -38,10 +40,10 @@ public class User  implements Serializable {
 
     @Column 
     private String groupType; 
-    
-	@ManyToOne
-	@JoinColumn(name="uniqueId") 
-    private Media media; 
+     
+	@ManyToMany
+	@JoinColumn 
+    private ArrayList<Media> media; 
     /// 
 
 	public Long getId() {
@@ -100,11 +102,11 @@ public class User  implements Serializable {
 		this.groupType = groupType;
 	}
 
-	public Media getMedia() {
+	public ArrayList<Media> getMedia() {
 		return media;
 	}
 
-	public void setMedia(Media media) {
+	public void setMedia(ArrayList<Media> media) {
 		this.media = media;
 	}
 

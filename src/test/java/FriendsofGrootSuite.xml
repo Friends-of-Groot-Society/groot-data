@@ -1,0 +1,26 @@
+<!-- <?xml version="1.0" encoding="UTF-8"?> -->
+<!--   <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd"> -->
+<suite name="Suite" parallel="false">
+  <test name="TestNGTests">
+  	<parameter name="env" value="QA" />
+  	<parameter name="browser" value="chrome" />
+    <parameter name="url" value="http://localhost:4200" />
+	
+	<parameter name="emailId" value="tester@gmail.com" />
+	<parameter name="password" value="password" />
+	<parameter name="fName" value="Tom" />
+	<parameter name="lName" value="Milton" />
+	
+	<classes> 
+		<class name = "net.groot.data.TestNgFeatures"/>
+	</classes>
+  </test> 
+  
+<!-- 
+<test name = "Cucumber Tests">
+	<classes>
+		<class name = "net.groot.data.TestRunner"></class>
+	</classes>
+</test>
+ -->
+</suite>  

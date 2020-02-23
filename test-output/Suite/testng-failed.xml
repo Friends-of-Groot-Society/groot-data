@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Suite]">
+  <parameter name="lName" value="Milton"/>
+  <parameter name="password" value="password"/>
+  <parameter name="fName" value="Tom"/>
+  <parameter name="emailId" value="tester@gmail.com"/>
+  <parameter name="url" value="http://localhost:4200"/>
+  <test name="TestNGTests">
+    <parameter name="lName" value="Milton"/>
+    <parameter name="password" value="password"/>
+    <parameter name="fName" value="Tom"/>
+    <parameter name="emailId" value="tester@gmail.com"/>
+    <parameter name="url" value="http://localhost:4200"/>
+    <classes>
+      <class name="net.groot.data.TestNgFeatures"/>
+    </classes>
+  </test> <!-- TestNGTests -->
+  <test name="TestNGTests(failed)">
+    <parameter name="lName" value="Milton"/>
+    <parameter name="password" value="password"/>
+    <parameter name="fName" value="Tom"/>
+    <parameter name="emailId" value="tester@gmail.com"/>
+    <parameter name="url" value="http://localhost:4200"/>
+    <classes>
+      <class name="net.groot.data.TestNgFeatures">
+        <methods>
+          <include name="passInPassword"/>
+          <include name="afterSuite"/>
+          <include name="beforeClass"/>
+          <include name="afterMethod"/>
+          <include name="afterTest"/>
+          <include name="afterClass"/>
+          <include name="beforeSuite"/>
+          <include name="beforeMethod"/>
+          <include name="beforeTest"/>
+          <include name="passInEmail"/>
+        </methods>
+      </class> <!-- net.groot.data.TestNgFeatures -->
+    </classes>
+  </test> <!-- TestNGTests(failed) -->
+</suite> <!-- Failed suite [Suite] -->

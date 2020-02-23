@@ -27,9 +27,9 @@ import net.groot.data.services.UserService;
 
 @RestController
 @CrossOrigin
-@RequestMapping("/api/user")
+@RequestMapping("/api/users")
 public class UserController {
-
+ 
     @Autowired
     private UserService userService;
 
@@ -37,7 +37,7 @@ public class UserController {
     public ResponseEntity<Void> createNewUser(@Valid @RequestBody UserRequest userRequest, UriComponentsBuilder uriComponentsBuilder) {
         Long primaryKey = userService.createNewUser(userRequest);
 
-        UriComponents uriComponents = uriComponentsBuilder.path("/api/user/{id}").buildAndExpand(primaryKey);
+        UriComponents uriComponents = uriComponentsBuilder.path("/api/users/{id}").buildAndExpand(primaryKey);
         HttpHeaders headers = new HttpHeaders();
         headers.setLocation(uriComponents.toUri());
 
@@ -48,7 +48,7 @@ public class UserController {
     public ResponseEntity<List<User>> getAllUsers() {
         return ResponseEntity.ok(userService.getAllUsers());
     }
-
+ 
     @GetMapping("/{id}")
     public ResponseEntity<User> getUserById(@PathVariable("id") Long id) {
         return ResponseEntity.ok(userService.getUserById(id));
@@ -65,5 +65,6 @@ public class UserController {
         return ResponseEntity.ok().build();
     }
 
+    
 }
 
