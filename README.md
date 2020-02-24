@@ -1,16 +1,16 @@
 ## groot-data
 SpringBoot Data JPA persistance-API, using H2database, Junit5
  
-Java Application for Friends of Groot Society
+Java-Angular Application for <a style="text-decoration:none;color:black;" href="http://friends-of-groot-society.s3-website-us-east-1.amazonaws.com">Friends of Groot Society</a>
 <a style="margin-left:20%;" href="https://friends-of-groot-society.s3-website-us-east-1.amazonaws.com
 ">
 <img width="200" src="https://friends-of-groot-society.s3.amazonaws.com/assets/grootsmall.png" title="Friends_of_Groot_Society_App" alt="Friends_of_Groot_Society_Image"></a>
 
-### Groot Society Fan Club Groot News Tracker 
-> <a style="text-decoration:none;color:black;" href="http://friends-of-groot-society.s3-website-us-east-1.amazonaws.com/grootedex">Friends_of_Groot_Society</a>
+### Groot Society Fan Club Groot News Tracker  
 
-> Full-Stack application that manages Groot Fan Club News and Features
- 
+> Full-Stack Java Spring & Angular application that manages Groot Fan Club News and Features
+> H2 Embedded DataBase on EC2
+> TestNG/Selenium/JUnit Testing - Code Coverage 40%
 ### Author 
 > Thomas Maestas 
 
