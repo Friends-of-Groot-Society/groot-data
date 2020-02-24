@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="InvocationNewsTest" parallel="false">
+  <test name="InvocationNewsTest">
+  
+  	<parameter name="env" value="QA" />
+  	<parameter name="browser" value="chrome" />
+    <parameter name="local_url" value="http://localhost:4200" />
+    <parameter name="url" value="http://friends-of-groot-society.s3-website-us-east-1.amazonaws.com/" />
+     
+    <classes>
+      <class name="net.groot.data.InvocationNewsTest"/>
+      
+      <class name="net.groot.data.SearchTest">
+      	<methods>
+      		<exclude name="SearchBarMethod"/>
+      	</methods>
+      </class>
+    </classes>
+    
+  </test>  
+</suite>  

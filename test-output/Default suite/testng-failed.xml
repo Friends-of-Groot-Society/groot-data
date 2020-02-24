@@ -1,30 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
-  <test verbose="2" name="Default test">
-    <classes>
-      <class name="net.groot.data.TestNgRegister"/>
-    </classes>
-  </test> <!-- Default test -->
+<suite name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="net.groot.data.TestNgRegister">
+      <class name="net.groot.data.InvocationNewsTest">
         <methods>
-          <include name="passInPassword"/>
-          <include name="passInEmail"/>
+          <include name="beforeTest"/>
+          <include name="afterMethod"/>
           <include name="afterTest"/>
           <include name="beforeSuite"/>
-          <include name="afterMethod"/>
-          <include name="passInFirstName"/>
-          <include name="beforeClass"/>
-          <include name="findRegisterElement"/>
-          <include name="beforeMethod"/>
           <include name="afterClass"/>
+          <include name="webParameterTest"/>
+          <include name="beforeClass"/>
+          <include name="beforeMethod"/>
           <include name="afterSuite"/>
-          <include name="passInLastName"/>
-          <include name="beforeTest"/>
         </methods>
-      </class> <!-- net.groot.data.TestNgRegister -->
+      </class> <!-- net.groot.data.InvocationNewsTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
