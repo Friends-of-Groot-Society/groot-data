@@ -7,26 +7,42 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.BeforeClass;
 
+import static org.testng.Assert.assertEquals;
+
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.AfterSuite;
-
-public class InvocationCountTest {
+ 
+public class InvocationNewsTest {
 
 	WebDriver driver;
 
-	@Test
-	@Parameters({ "env", "browser", "url" })
-	public void webParameterTest(String env, String browser, String url) throws Throwable {
+	@BeforeSuite 
+	public void beforeSuite(  ) {
+	
+	}
 
+	@BeforeClass
+	public void beforeClass() throws Throwable { 
+			
+	}
+
+	@BeforeMethod
+	public void beforeMethod() {
+	}
+
+	@Test(priority=4)
+	@Parameters({ "env", "browser", "local_url" })
+	public void webParameterTest(String env, String browser, String local_url) throws Throwable {
 		if (browser.contentEquals("chrome")) {
 			System.setProperty("webdriver.chrome.driver", "src/test/java/net/groot/resources/chromedriver.exe");
 			driver = new ChromeDriver();
@@ -34,41 +50,45 @@ public class InvocationCountTest {
 			System.setProperty("webdriver.chrome.driver", "src/test/java/net/groot/resources/geckodriver.exe");
 			driver = new FirefoxDriver();
 		}
-		driver.get(url);
+		driver.get(local_url);
 		driver.manage().window().maximize();
-		driver.manage().deleteAllCookies();
+//		driver.manage().deleteAllCookies();
 		driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-//	  driver.get("http://friends-of-groot-society.s3-website-us-east-1.amazonaws.com/");
-		driver.get("http://localhost:4200");
 		Thread.sleep(500);
-		driver.findElement(By.id("login")).click();
+		driver.findElement(By.id("news")).click();
 	}
 
-	@Test(invocationCount = 10, dataProvider = "dProvider1")
+	@Test(priority=2, invocationCount = 3, dataProvider = "dProvider1")
+	@Parameters("browser")
 	public void invokeProvider(Integer n, String s) {
 
 	}
 
-	@Test(invocationCount = 10, expectedExceptions = NumberFormatException.class)
+	@Test(priority=1, invocationCount = 3 )
+	@Parameters("browser")
 	public void math() {
 		int a = 10;
 		int b = 20;
 		int c = a + b;
+		Assert.assertEquals(30, c);
 		System.out.println("math is=====" + c);
 	}
 
-	@Test(invocationCount = 10, expectedExceptions = NumberFormatException.class)
+	@Test(priority=3, invocationCount = 10, expectedExceptions = NumberFormatException.class)
+	@Parameters("browser")
 	public void mathError() {
 		String x = "100A";
 		Integer.parseInt(x);
 		System.out.println("mathException Catch=====" + x);
 	}
 
-	@BeforeMethod
-	public void beforeMethod() {
+	@Test
+	@Parameters("browser")
+	public void SearchBarMethod() {
+		
 	}
-
+	
 	@AfterMethod
 	public void afterMethod() {
 	}
@@ -78,28 +98,24 @@ public class InvocationCountTest {
 		return new Object[][] { new Object[] { 1, "a" }, new Object[] { 2, "b" }, };
 	}
 
-	@BeforeClass
-	public void beforeClass() {
+	@BeforeTest
+	public void beforeTest() {
+	}
+	
+	@AfterTest
+	public void afterTest() {
 	}
 
 	@AfterClass
 	public void afterClass() {
 	}
 
-	@BeforeTest
-	public void beforeTest() {
-	}
 
-	@AfterTest
-	public void afterTest() {
-	}
-
-	@BeforeSuite
-	public void beforeSuite() {
-	}
 
 	@AfterSuite
-	public void afterSuite() {
+	public void afterSuite() throws InterruptedException {
+//		driver.manage().deleteAllCookies(); 
+		driver.quit();
 	}
 
 }

@@ -1,10 +1,11 @@
- 
-<suite name="Failed suite [Suite]">
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [InvocationNewsTest]">
   <parameter name="local_url" value="http://localhost:4200"/>
   <parameter name="browser" value="chrome"/>
   <parameter name="env" value="QA"/>
   <parameter name="url" value="http://friends-of-groot-society.s3-website-us-east-1.amazonaws.com/"/>
-  <test name="Test(failed)">
+  <test name="InvocationNewsTest(failed)">
     <parameter name="local_url" value="http://localhost:4200"/>
     <parameter name="browser" value="chrome"/>
     <parameter name="env" value="QA"/>
@@ -12,12 +13,17 @@
     <classes>
       <class name="net.groot.data.InvocationNewsTest">
         <methods>
-          <include name="invokeProvider"/>
+          <include name="beforeTest"/>
+          <include name="afterMethod"/>
+          <include name="afterTest"/>
           <include name="math"/>
-          <include name="SearchBarMethod"/>
-          <include name="mathError"/>
+          <include name="beforeSuite"/>
+          <include name="afterClass"/>
+          <include name="beforeClass"/>
+          <include name="beforeMethod"/>
+          <include name="afterSuite"/>
         </methods>
       </class> <!-- net.groot.data.InvocationNewsTest -->
     </classes>
-  </test> <!-- Test(failed) -->
-</suite> <!-- Failed suite [Suite] -->
+  </test> <!-- InvocationNewsTest(failed) -->
+</suite> <!-- Failed suite [InvocationNewsTest] -->

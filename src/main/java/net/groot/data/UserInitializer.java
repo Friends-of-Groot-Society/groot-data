@@ -35,8 +35,18 @@ public class UserInitializer implements CommandLineRunner {
 
 			User user = new User();
 
+//
+			user.setTokenId(UUID.randomUUID().toString());
+//			user.setTokenId(faker.idNumber().ssnValid());
+			user.setEmail(faker.internet().emailAddress());
+			user.setPassword(faker.internet().password());
+			user.setfName(faker.howIMetYourMother().character());
+			user.setlName(faker.superhero().name());
+			user.setMemberSince(faker.date().toString());
+			user.setGroupType(faker.superhero().power());
+			
 			Media media = new Media();
-
+			
 			media.setUniqueId(UUID.randomUUID().toString());
 			media.setCharacter(faker.hobbit().character());
 			media.setLocation(faker.hobbit().location());
@@ -44,12 +54,6 @@ public class UserInitializer implements CommandLineRunner {
 			media.setQuote(faker.hobbit().quote());
 			mediaRepository.save(media);
 			
-			user.setEmail(faker.internet().emailAddress());
-			user.setPassword(faker.internet().password());
-			user.setfName(faker.howIMetYourMother().character());
-			user.setlName(faker.superhero().name());
-			user.setMemberSince(faker.date().toString());
-			user.setGroupType(faker.superhero().power());
 			user.setMedia(media);
 
 			userRepository.save(user);

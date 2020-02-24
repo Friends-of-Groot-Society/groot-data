@@ -21,6 +21,9 @@ public class User  implements Serializable {
     @GeneratedValue
     private Long id;
 
+	@Column 
+    private String tokenId;
+    
     @Column(nullable = false, unique = true)
     private String email;
 
@@ -50,6 +53,14 @@ public class User  implements Serializable {
 
 	public void setId(Long id) {
 		this.id = id;
+	}
+
+    public String getTokenId() {
+		return tokenId;
+	}
+
+	public void setTokenId(String tokenId) {
+		this.tokenId = tokenId;
 	}
 
 	public String getEmail() {
@@ -110,24 +121,7 @@ public class User  implements Serializable {
 
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", email=" + email + ", password=" + password + ", fName=" + fName + ", lName="
-				+ lName + ", memberSince=" + memberSince + ", groupType=" + groupType + ", media=" + media + "]";
+		return "User [id=" + id + ", tokenId=" + tokenId + ", email=" + email + ", fName=" + fName + ", lName=" + lName
+				+ ", memberSince=" + memberSince + ", groupType=" + groupType + ", media=" + media + "]";
 	}
-//  {
-//  fName: "Tom",
-//  lName: "Milton",
-//  email: "thomasm1.maestas@gmail.com",
-//  memberSince: "02-04-2020",
-//  groupType: "Admin",
-//  media: [ 
-//    {
-//      "id": 12,
-//      "uniqueId": "8bf37760-93fd-4f1b-b02c-473d319621ab",
-//      "character": "Ori",
-//      "location": "Mount Gram",
-//      "thorinsCompany": "Bifur",
-//      "quote": "Where did you go to, if I may ask?' said Thorin to Gandalf as they rode along.  To look ahead,' said he.  And what brought you back in the nick of time?' Looking behind,' said he."
-//    } 
-//  ],
-//}
 }

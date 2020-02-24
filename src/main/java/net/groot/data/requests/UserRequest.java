@@ -9,13 +9,14 @@ import javax.validation.constraints.Size;
 @Data
 public class UserRequest {
 
-    public UserRequest() {
+	public UserRequest() {
 		super();
 	}
  
-    public UserRequest(@NotEmpty String email, @NotEmpty String password, @NotEmpty String fName, @NotEmpty String lName,
+    public UserRequest(String tokenId, @NotEmpty String email, @NotEmpty String password, @NotEmpty String fName, @NotEmpty String lName,
     		String memberSince, String groupType, Media media) {
     	super();
+    	this.tokenId = tokenId;
     	this.email = email;
     	this.password = password;
     	this.fName = fName;
@@ -25,6 +26,8 @@ public class UserRequest {
     	this.media = media;
     }
 
+	private String tokenId; 
+	
 	@NotEmpty
     private String email; 
 
@@ -43,6 +46,16 @@ public class UserRequest {
 
     private  Media media;
 
+    //
+
+	public String getTokenId() {
+		return tokenId;
+	}
+
+	public void setTokenId(String tokenId) {
+		this.tokenId = tokenId;
+	}
+    
 	public String getEmail() {
 		return email;
 	}
@@ -98,6 +111,7 @@ public class UserRequest {
 	public void setMedia(Media media) {
 		this.media = media;
 	}
+
      
 	
 }

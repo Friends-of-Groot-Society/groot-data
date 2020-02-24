@@ -33,7 +33,7 @@ public class TestNgLogin {
 		WebElement title = driver.findElement(By.className("page-title"));
 		Assert.assertEquals("Sign In", title.getText());
 	}
-	@Test(priority=3, dependsOnMethods="findLoginElement")
+	@Test(priority=3, dependsOnMethods={"findLoginPage", "findLoginElement"})
 	public void passInEmail() throws Throwable {
 
 		 driver.findElement(By.xpath("//*[@id='email']")).clear();
