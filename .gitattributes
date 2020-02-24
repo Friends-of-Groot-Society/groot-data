@@ -1,0 +1,4 @@
+*.xml linguist-language=Java
+resources/* linguist-documentation
+*.md linguist-documentation
+*.txt linguist-documentation
