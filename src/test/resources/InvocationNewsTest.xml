@@ -12,7 +12,7 @@
       
       <class name="net.groot.data.SearchTest">
       	<methods>
-      		<exclude name="SearchBarMethod"/>
+      		<exclude name="SearchBarMethod"/> 
       	</methods>
       </class>
     </classes>

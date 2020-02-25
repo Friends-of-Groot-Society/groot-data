@@ -20,9 +20,6 @@ public class User  implements Serializable {
     @Id
     @GeneratedValue
     private Long id;
-
-	@Column 
-    private String tokenId;
     
     @Column(nullable = false, unique = true)
     private String email;
@@ -53,14 +50,6 @@ public class User  implements Serializable {
 
 	public void setId(Long id) {
 		this.id = id;
-	}
-
-    public String getTokenId() {
-		return tokenId;
-	}
-
-	public void setTokenId(String tokenId) {
-		this.tokenId = tokenId;
 	}
 
 	public String getEmail() {
@@ -121,7 +110,7 @@ public class User  implements Serializable {
 
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", tokenId=" + tokenId + ", email=" + email + ", fName=" + fName + ", lName=" + lName
+		return "User [id=" + id + ",  email=" + email + ", fName=" + fName + ", lName=" + lName
 				+ ", memberSince=" + memberSince + ", groupType=" + groupType + ", media=" + media + "]";
 	}
 }

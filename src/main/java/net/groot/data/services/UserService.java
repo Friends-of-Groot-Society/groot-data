@@ -19,8 +19,7 @@ public class UserService {
 
 	public Long createNewUser(UserRequest userRequest) {
 		User user = new User();
-
-		user.setTokenId(userRequest.getTokenId());
+ 
 		user.setEmail(userRequest.getEmail());
 		user.setPassword(userRequest.getPassword());
 		user.setfName(userRequest.getfName());

@@ -1,13 +1,7 @@
 package net.groot.data;
 
-import static org.junit.Assert.assertTrue;
-
 import org.junit.Test;
-import org.testng.SkipException;
-
-import com.github.javafaker.Faker;
-
-import net.groot.data.services.*; 
+import org.testng.SkipException; 
 
 public class SearchTest {
 	
