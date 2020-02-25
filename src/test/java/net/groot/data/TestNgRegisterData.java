@@ -2,6 +2,8 @@ package net.groot.data;
 
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
@@ -12,18 +14,34 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import org.testng.annotations.Test;
+
+//import net.groot.utility.DataRegisterUtil; 
+
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.AfterSuite;
 
-public class TestNgRegister {
+public class TestNgRegisterData {
 
-	WebDriver driver; 
+	WebDriver driver;
+
+//	@DataProvider
+//	public Iterator<Object[]> getTheData() {
+//		ArrayList<Object[]> testData = DataRegisterUtil.getDataFromExcel();
+//		return testData.iterator();
+//	}
+	
+	@DataProvider(name="getTheData")
+	public static Object[][] register() {
+		
+		return new Object[][] {{"fName", "Firstname"}, {"lName", "Lastname"},{"email", "Ganon@gmail.com"},{"password", "password"}};
+	}
 	
 	@BeforeSuite
 	public void beforeSuite() {
@@ -33,75 +51,62 @@ public class TestNgRegister {
 
 	@BeforeClass
 	public void beforeClass() throws Throwable {
+
+	}
+
+	@BeforeMethod
+	public void beforeMethod() throws Throwable {
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
 		driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 //	  driver.get("http://friends-of-groot-society.s3-website-us-east-1.amazonaws.com/");
-		driver.get("http://localhost:4200");
-		Thread.sleep(500);
-		driver.findElement(By.id("register")).click();
-	}
-	
-	@BeforeMethod
-	public void beforeMethod() throws Throwable {
-
+		driver.get("http://localhost:4200/register");
 	}
 
 	@BeforeTest
 	public void beforeTest() {
 	}
-	@Test(priority = 1, groups="pageOpen")
+
+	@Test(priority = 1, groups = "pageOpen")
 	public void findRegisterPage() throws Throwable {
 		boolean title = driver.findElement(By.className("page-title")).isDisplayed();
 		Assert.assertEquals(true, title);
 	}
 
-	@Test(priority = 2, groups="pageOpen")
+	@Test(priority = 2, groups = "pageOpen")
 	public void findRegisterElement() throws Throwable {
 		WebElement title = driver.findElement(By.className("page-title"));
 		Assert.assertEquals("Register", title.getText());
 	}
 
-	@Test(priority = 3, groups="elementInput", dependsOnMethods = "findRegisterElement")
-	public void passInFirstName() throws Throwable {
+	@Test(priority = 3, dataProvider="getTheData") 
+	public void registerPage(String email, String password, String fName, String lName) throws Throwable {
+		Thread.sleep(1000);
+		System.out.println(email);
+		driver.findElement(By.xpath("//*[@id='email']")).clear();
+		driver.findElement(By.xpath("//*[@id='email']")).sendKeys(email);
+
+		driver.findElement(By.xpath("//*[@id='password']")).clear();
+		driver.findElement(By.xpath("//*[@id='password']")).sendKeys(password);
 
 		driver.findElement(By.xpath("//*[@id='fName']")).clear();
-		driver.findElement(By.xpath("//*[@id='fName']")).sendKeys("myFirstName");
-
-	}
-
-	@Test(priority = 4, groups="elementInput", dependsOnMethods = "findRegisterElement")
-	public void passInLastName() throws Throwable {
+		driver.findElement(By.xpath("//*[@id='fName']")).sendKeys(fName);
 
 		driver.findElement(By.xpath("//*[@id='lName']")).clear();
-		driver.findElement(By.xpath("//*[@id='lName']")).sendKeys("myLastName");
+		driver.findElement(By.xpath("//*[@id='lName']")).sendKeys(lName);
 
 	}
 
-	@Test(priority = 5, groups="elementInput", dependsOnMethods = "findRegisterElement")
-	public void passInEmail() throws Throwable {
-
-		driver.findElement(By.xpath("//*[@id='email']")).clear();
-		driver.findElement(By.xpath("//*[@id='email']")).sendKeys("user@gmail.com");
-
-	}
-
-	@Test(priority = 6, groups="elementInput", dependsOnMethods = "findRegisterElement")
-	public void passInPassword() throws Throwable {
-		Thread.sleep(500);
-		driver.findElement(By.xpath("//*[@id='password']")).clear();
-		driver.findElement(By.xpath("//*[@id='password']")).sendKeys("password");
-	}
-
-	@Test(priority = 7, groups="submit", dependsOnMethods = "findRegisterElement")
+	@Test(priority = 4, groups = "submit", dependsOnMethods = "findRegisterElement")
 	public void confirm() throws Throwable {
 		Thread.sleep(500);
 		WebElement submitBtn = driver.findElement(By.className("register"));
 		Assert.assertEquals(true, submitBtn.isDisplayed());
 		submitBtn.click();
 	}
-	@Test(priority = 8, enabled=false)
+
+	@Test(priority = 5, groups = "submit", enabled = false)
 	public void confirmLeft() throws Throwable {
 		Thread.sleep(500);
 		WebElement submitBtn = driver.findElement(By.className("register"));
@@ -121,8 +126,8 @@ public class TestNgRegister {
 	@AfterClass
 	public void afterClass() throws Throwable {
 		Thread.sleep(1000);
-	} 
-	
+	}
+
 	@AfterSuite
 	public void afterSuite() throws InterruptedException {
 //		driver.manage().deleteAllCookies(); 

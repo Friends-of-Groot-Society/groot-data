@@ -31,36 +31,104 @@ div.shootout {padding:2em;border:3px #4854A8 solid}
 <body>
 <table cellspacing="0" cellpadding="0" class="result">
 <tr><th>Test</th><th class="numi">Methods<br/>Passed</th><th class="numi">Scenarios<br/>Passed</th><th class="numi"># skipped</th><th class="numi"># failed</th><th class="numi">Total<br/>Time</th><th class="numi">Included<br/>Groups</th><th class="numi">Excluded<br/>Groups</th></tr>
-<tr><td style="text-align:left;padding-right:2em">Default test</td><td class="numi">20</td><td class="numi">20</td><td class="numi">0</td><td class="numi_attn">1</td><td class="numi">0.1 seconds</td><td class="numi"></td><td class="numi"></td></tr>
+<tr><td style="text-align:left;padding-right:2em">UserTestNG</td><td class="numi">9</td><td class="numi">9</td><td class="numi">0</td><td class="numi_attn">7</td><td class="numi">22.2 seconds</td><td class="numi"></td><td class="numi"></td></tr>
 </table>
 <table cellspacing="0" cellpadding="0" class="passed" id="summary">
 <tr><th>Class</th><th>Method</th><th># of<br/>Scenarios</th><th>Start</th><th>Time<br/>(ms)</th></tr>
-<tr><th colspan="4">Default test &#8212; failed (configuration methods)</th></tr>
-<tr class="failedodd"><td rowspan="1">net.groot.data.InvocationNewsTest</td><td><a href="#m1"><b>afterSuite</b>  </a></td><td class="numi">1</td><td>1582499203059</td><td class="numi">0</td></tr>
-<tr><th colspan="4">Default test &#8212; failed</th></tr>
-<tr class="failedodd"><td rowspan="1">net.groot.data.InvocationNewsTest</td><td><a href="#m2"><b>webParameterTest</b>  </a></td><td class="numi">1</td><td>1582499202946</td><td class="numi">0</td></tr>
-<tr><th colspan="4">Default test &#8212; passed</th></tr>
-<tr class="passedodd"><td rowspan="20">net.groot.data.InvocationNewsTest</td><td><a href="#m3"><b>SearchBarMethod</b>  </a></td><td class="numi">1</td><td>1582499202842</td><td class="numi">7</td></tr><tr class="passedodd"><td><a href="#m4"><b>math</b>  </a></td><td class="numi">3</td><td>1582499202867</td><td class="numi">17</td></tr><tr class="passedodd"><td><a href="#m5"><b>math</b>  </a></td><td class="numi">3</td><td>1582499202867</td><td class="numi">17</td></tr><tr class="passedodd"><td><a href="#m6"><b>math</b>  </a></td><td class="numi">3</td><td>1582499202867</td><td class="numi">17</td></tr><tr class="passedodd"><td><a href="#m7"><b>invokeProvider</b>  </a></td><td class="numi">6</td><td>1582499202888</td><td class="numi">19</td></tr><tr class="passedodd"><td><a href="#m8"><b>invokeProvider</b>  </a></td><td class="numi">6</td><td>1582499202888</td><td class="numi">19</td></tr><tr class="passedodd"><td><a href="#m9"><b>invokeProvider</b>  </a></td><td class="numi">6</td><td>1582499202888</td><td class="numi">19</td></tr><tr class="passedodd"><td><a href="#m10"><b>invokeProvider</b>  </a></td><td class="numi">6</td><td>1582499202888</td><td class="numi">19</td></tr><tr class="passedodd"><td><a href="#m11"><b>invokeProvider</b>  </a></td><td class="numi">6</td><td>1582499202888</td><td class="numi">19</td></tr><tr class="passedodd"><td><a href="#m12"><b>invokeProvider</b>  </a></td><td class="numi">6</td><td>1582499202888</td><td class="numi">19</td></tr><tr class="passedodd"><td><a href="#m13"><b>mathError</b>  </a></td><td class="numi">10</td><td>1582499202909</td><td class="numi">35</td></tr><tr class="passedodd"><td><a href="#m14"><b>mathError</b>  </a></td><td class="numi">10</td><td>1582499202909</td><td class="numi">35</td></tr><tr class="passedodd"><td><a href="#m15"><b>mathError</b>  </a></td><td class="numi">10</td><td>1582499202909</td><td class="numi">35</td></tr><tr class="passedodd"><td><a href="#m16"><b>mathError</b>  </a></td><td class="numi">10</td><td>1582499202909</td><td class="numi">35</td></tr><tr class="passedodd"><td><a href="#m17"><b>mathError</b>  </a></td><td class="numi">10</td><td>1582499202909</td><td class="numi">35</td></tr><tr class="passedodd"><td><a href="#m18"><b>mathError</b>  </a></td><td class="numi">10</td><td>1582499202909</td><td class="numi">35</td></tr><tr class="passedodd"><td><a href="#m19"><b>mathError</b>  </a></td><td class="numi">10</td><td>1582499202909</td><td class="numi">35</td></tr><tr class="passedodd"><td><a href="#m20"><b>mathError</b>  </a></td><td class="numi">10</td><td>1582499202909</td><td class="numi">35</td></tr><tr class="passedodd"><td><a href="#m21"><b>mathError</b>  </a></td><td class="numi">10</td><td>1582499202909</td><td class="numi">35</td></tr><tr class="passedodd"><td><a href="#m22"><b>mathError</b>  </a></td><td class="numi">10</td><td>1582499202909</td><td class="numi">35</td></tr>
+<tr><th colspan="4">UserTestNG &#8212; failed</th></tr>
+<tr class="failedodd"><td rowspan="4">net.groot.data.TestNgRegister</td><td><a href="#m1"><b>passInFirstName</b> (elementInput) </a></td><td class="numi">1</td><td>1582599755105</td><td class="numi">46</td></tr><tr class="failedodd"><td><a href="#m2"><b>passInLastName</b> (elementInput) </a></td><td class="numi">1</td><td>1582599755158</td><td class="numi">72</td></tr><tr class="failedodd"><td><a href="#m3"><b>passInEmail</b> (elementInput) </a></td><td class="numi">1</td><td>1582599755234</td><td class="numi">44</td></tr><tr class="failedodd"><td><a href="#m4"><b>passInPassword</b> (elementInput) </a></td><td class="numi">1</td><td>1582599755280</td><td class="numi">599</td></tr>
+<tr class="failedeven"><td rowspan="2">net.groot.data.TestNgLogin</td><td><a href="#m5"><b>passInEmail</b>  </a></td><td class="numi">1</td><td>1582599762554</td><td class="numi">32</td></tr><tr class="failedeven"><td><a href="#m6"><b>passInPassword</b>  </a></td><td class="numi">1</td><td>1582599762588</td><td class="numi">588</td></tr>
+<tr class="failedodd"><td rowspan="1">net.groot.data.TestNgRegisterData</td><td><a href="#m7"><b>registerPage</b>  </a></td><td class="numi">1</td><td>1582599748029</td><td class="numi">2</td></tr>
+<tr><th colspan="4">UserTestNG &#8212; passed</th></tr>
+<tr class="passedodd"><td rowspan="3">net.groot.data.TestNgRegisterData</td><td><a href="#m8"><b>findRegisterPage</b> (pageOpen) </a></td><td class="numi">1</td><td>1582599747180</td><td class="numi">38</td></tr><tr class="passedodd"><td><a href="#m9"><b>findRegisterElement</b> (pageOpen) </a></td><td class="numi">1</td><td>1582599747999</td><td class="numi">29</td></tr><tr class="passedodd"><td><a href="#m10"><b>confirm</b> (submit) </a></td><td class="numi">1</td><td>1582599748685</td><td class="numi">590</td></tr>
+<tr class="passedeven"><td rowspan="3">net.groot.data.TestNgRegister</td><td><a href="#m11"><b>findRegisterPage</b> (pageOpen) </a></td><td class="numi">1</td><td>1582599755024</td><td class="numi">31</td></tr><tr class="passedeven"><td><a href="#m12"><b>findRegisterElement</b> (pageOpen) </a></td><td class="numi">1</td><td>1582599755056</td><td class="numi">47</td></tr><tr class="passedeven"><td><a href="#m13"><b>confirm</b> (submit) </a></td><td class="numi">1</td><td>1582599755880</td><td class="numi">578</td></tr>
+<tr class="passedodd"><td rowspan="3">net.groot.data.TestNgLogin</td><td><a href="#m14"><b>findLoginPage</b>  </a></td><td class="numi">1</td><td>1582599762479</td><td class="numi">35</td></tr><tr class="passedodd"><td><a href="#m15"><b>findLoginElement</b>  </a></td><td class="numi">1</td><td>1582599762515</td><td class="numi">37</td></tr><tr class="passedodd"><td><a href="#m16"><b>confirm</b>  </a></td><td class="numi">1</td><td>1582599763178</td><td class="numi">603</td></tr>
 </table>
-<h1>Default test</h1>
-<h2 id="m1">net.groot.data.InvocationNewsTest:afterSuite</h2>
+<h1>UserTestNG</h1>
+<h2 id="m1">net.groot.data.TestNgRegister:passInFirstName</h2>
 <div style="padding-left:3em">
-<p>null</p>
-net.groot.data.InvocationNewsTest.afterSuite(InvocationNewsTest.java:118)
-<br/>19 lines not shown
+<p>unknown error: call function result missing &apos;value&apos;
+  (Session info: chrome=80.0.3987.122)
+  (Driver info: chromedriver=2.33.506120 (e3e53437346286c0bc2d2dc9aa4915ba81d9023f),platform=Windows NT 10.0.18363 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;PHAEDROS&apos;, ip: &apos;172.16.112.231&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_231&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptSslCerts: true, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.33.506120 (e3e53437346286..., userDataDir: C:\Users\thoma\AppData\Loca...}, cssSelectorsEnabled: true, databaseEnabled: false, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 80.0.3987.122, webStorageEnabled: true}
+Session ID: af3c5f4ff2a68f098af3a62a601d21e4</p>
+sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+<br/>at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+<br/>at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+<br/>at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+<br/>at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
+<br/>at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
+<br/>at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
+<br/>at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:80)
+<br/>at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:44)
+<br/>at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+<br/>at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+<br/>at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+<br/>at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
+<br/>at org.openqa.selenium.remote.RemoteWebElement.clear(RemoteWebElement.java:124)
+<br/>at net.groot.data.TestNgRegister.passInFirstName(TestNgRegister.java:69)
+<br/>25 lines not shown
 </div>
 <p class="totop"><a href="#summary">back to summary</a></p>
-<h2 id="m2">net.groot.data.InvocationNewsTest:webParameterTest</h2>
+<h2 id="m2">net.groot.data.TestNgLogin:passInPassword</h2>
+<div style="padding-left:3em">
+<p>unknown error: call function result missing &apos;value&apos;
+  (Session info: chrome=80.0.3987.122)
+  (Driver info: chromedriver=2.33.506120 (e3e53437346286c0bc2d2dc9aa4915ba81d9023f),platform=Windows NT 10.0.18363 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;PHAEDROS&apos;, ip: &apos;172.16.112.231&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_231&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptSslCerts: true, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.33.506120 (e3e53437346286..., userDataDir: C:\Users\thoma\AppData\Loca...}, cssSelectorsEnabled: true, databaseEnabled: false, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 80.0.3987.122, webStorageEnabled: true}
+Session ID: 4a5696bf8125d40391707b2982a343e9</p>
+sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+<br/>at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+<br/>at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+<br/>at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+<br/>at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
+<br/>at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
+<br/>at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
+<br/>at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:80)
+<br/>at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:44)
+<br/>at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+<br/>at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+<br/>at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+<br/>at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
+<br/>at org.openqa.selenium.remote.RemoteWebElement.clear(RemoteWebElement.java:124)
+<br/>at net.groot.data.TestNgLogin.passInPassword(TestNgLogin.java:46)
+<br/>25 lines not shown
+</div>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m3">net.groot.data.TestNgRegisterData:registerPage</h2>
 <div style="padding-left:3em">
 <p>
-Parameter &apos;env&apos; is required by @Test on method webParameterTest but has not been marked @Optional or defined
-in C:\Users\thoma\AppData\Local\Temp\testng-eclipse--1827764408\testng-customsuite.xml</p>
-org.testng.internal.Parameters.createParameters(Parameters.java:155)
-<br/>at org.testng.internal.Parameters.createParameters(Parameters.java:355)
-<br/>at org.testng.internal.Parameters.handleParameters(Parameters.java:447)
-<br/>at org.testng.internal.Invoker.handleParameters(Invoker.java:1383)
-<br/>at org.testng.internal.Invoker.createParameters(Invoker.java:1075)
-<br/>at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1180)
+The data provider is trying to pass 2 parameters but the method net.groot.data.TestNgRegisterData#registerPage takes 4 and TestNG is unable in inject a suitable object</p>
+org.testng.internal.Invoker.injectParameters(Invoker.java:1361)
+<br/>at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1225)
+<br/>at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+<br/>at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+<br/>at org.testng.TestRunner.privateRun(TestRunner.java:767)
+<br/>at org.testng.TestRunner.run(TestRunner.java:617)
+<br/>at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+<br/>at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+<br/>at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+<br/>at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+<br/>at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+<br/>at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+<br/>at org.testng.TestNG.runSuitesSequentially(TestNG.java:1198)
+<br/>at org.testng.TestNG.runSuitesLocally(TestNG.java:1123)
+<br/>at org.testng.TestNG.run(TestNG.java:1031)
+<br/>at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+<br/>at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+<br/>at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+<br/>1 lines not shown
+<p>Caused by 2</p>
+org.testng.internal.Invoker.injectParameters(Invoker.java:1359)
+<br/>at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1225)
 <br/>at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
 <br/>at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
 <br/>at org.testng.TestRunner.privateRun(TestRunner.java:767)
@@ -80,160 +148,138 @@ org.testng.internal.Parameters.createParameters(Parameters.java:155)
 <br/>1 lines not shown
 </div>
 <p class="totop"><a href="#summary">back to summary</a></p>
-<h2 id="m3">net.groot.data.InvocationNewsTest:mathError</h2>
+<h2 id="m4">net.groot.data.TestNgRegister:passInLastName</h2>
 <div style="padding-left:3em">
-<p>For input string: &quot;100A&quot;</p>
-java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
-<br/>at java.lang.Integer.parseInt(Integer.java:580)
-<br/>at java.lang.Integer.parseInt(Integer.java:615)
-<br/>at net.groot.data.InvocationNewsTest.mathError(InvocationNewsTest.java:82)
+<p>unknown error: call function result missing &apos;value&apos;
+  (Session info: chrome=80.0.3987.122)
+  (Driver info: chromedriver=2.33.506120 (e3e53437346286c0bc2d2dc9aa4915ba81d9023f),platform=Windows NT 10.0.18363 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;PHAEDROS&apos;, ip: &apos;172.16.112.231&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_231&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptSslCerts: true, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.33.506120 (e3e53437346286..., userDataDir: C:\Users\thoma\AppData\Loca...}, cssSelectorsEnabled: true, databaseEnabled: false, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 80.0.3987.122, webStorageEnabled: true}
+Session ID: af3c5f4ff2a68f098af3a62a601d21e4</p>
+sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+<br/>at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+<br/>at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+<br/>at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+<br/>at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
+<br/>at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
+<br/>at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
+<br/>at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:80)
+<br/>at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:44)
+<br/>at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+<br/>at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+<br/>at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+<br/>at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
+<br/>at org.openqa.selenium.remote.RemoteWebElement.clear(RemoteWebElement.java:124)
+<br/>at net.groot.data.TestNgRegister.passInLastName(TestNgRegister.java:77)
 <br/>25 lines not shown
 </div>
 <p class="totop"><a href="#summary">back to summary</a></p>
-<h2 id="m4">net.groot.data.InvocationNewsTest:mathError</h2>
+<h2 id="m5">net.groot.data.TestNgRegister:passInEmail</h2>
 <div style="padding-left:3em">
-<p>For input string: &quot;100A&quot;</p>
-java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
-<br/>at java.lang.Integer.parseInt(Integer.java:580)
-<br/>at java.lang.Integer.parseInt(Integer.java:615)
-<br/>at net.groot.data.InvocationNewsTest.mathError(InvocationNewsTest.java:82)
+<p>unknown error: call function result missing &apos;value&apos;
+  (Session info: chrome=80.0.3987.122)
+  (Driver info: chromedriver=2.33.506120 (e3e53437346286c0bc2d2dc9aa4915ba81d9023f),platform=Windows NT 10.0.18363 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;PHAEDROS&apos;, ip: &apos;172.16.112.231&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_231&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptSslCerts: true, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.33.506120 (e3e53437346286..., userDataDir: C:\Users\thoma\AppData\Loca...}, cssSelectorsEnabled: true, databaseEnabled: false, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 80.0.3987.122, webStorageEnabled: true}
+Session ID: af3c5f4ff2a68f098af3a62a601d21e4</p>
+sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+<br/>at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+<br/>at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+<br/>at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+<br/>at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
+<br/>at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
+<br/>at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
+<br/>at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:80)
+<br/>at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:44)
+<br/>at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+<br/>at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+<br/>at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+<br/>at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
+<br/>at org.openqa.selenium.remote.RemoteWebElement.clear(RemoteWebElement.java:124)
+<br/>at net.groot.data.TestNgRegister.passInEmail(TestNgRegister.java:85)
 <br/>25 lines not shown
 </div>
 <p class="totop"><a href="#summary">back to summary</a></p>
-<h2 id="m5">net.groot.data.InvocationNewsTest:math</h2>
-<p class="totop"><a href="#summary">back to summary</a></p>
-<h2 id="m6">net.groot.data.InvocationNewsTest:SearchBarMethod</h2>
-<p class="totop"><a href="#summary">back to summary</a></p>
-<h2 id="m7">net.groot.data.InvocationNewsTest:mathError</h2>
+<h2 id="m6">net.groot.data.TestNgRegister:passInPassword</h2>
 <div style="padding-left:3em">
-<p>For input string: &quot;100A&quot;</p>
-java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
-<br/>at java.lang.Integer.parseInt(Integer.java:580)
-<br/>at java.lang.Integer.parseInt(Integer.java:615)
-<br/>at net.groot.data.InvocationNewsTest.mathError(InvocationNewsTest.java:82)
+<p>unknown error: call function result missing &apos;value&apos;
+  (Session info: chrome=80.0.3987.122)
+  (Driver info: chromedriver=2.33.506120 (e3e53437346286c0bc2d2dc9aa4915ba81d9023f),platform=Windows NT 10.0.18363 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;PHAEDROS&apos;, ip: &apos;172.16.112.231&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_231&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptSslCerts: true, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.33.506120 (e3e53437346286..., userDataDir: C:\Users\thoma\AppData\Loca...}, cssSelectorsEnabled: true, databaseEnabled: false, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 80.0.3987.122, webStorageEnabled: true}
+Session ID: af3c5f4ff2a68f098af3a62a601d21e4</p>
+sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+<br/>at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+<br/>at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+<br/>at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+<br/>at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
+<br/>at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
+<br/>at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
+<br/>at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:80)
+<br/>at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:44)
+<br/>at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+<br/>at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+<br/>at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+<br/>at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
+<br/>at org.openqa.selenium.remote.RemoteWebElement.clear(RemoteWebElement.java:124)
+<br/>at net.groot.data.TestNgRegister.passInPassword(TestNgRegister.java:93)
 <br/>25 lines not shown
 </div>
 <p class="totop"><a href="#summary">back to summary</a></p>
-<h2 id="m8">net.groot.data.InvocationNewsTest:mathError</h2>
+<h2 id="m7">net.groot.data.TestNgLogin:passInEmail</h2>
 <div style="padding-left:3em">
-<p>For input string: &quot;100A&quot;</p>
-java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
-<br/>at java.lang.Integer.parseInt(Integer.java:580)
-<br/>at java.lang.Integer.parseInt(Integer.java:615)
-<br/>at net.groot.data.InvocationNewsTest.mathError(InvocationNewsTest.java:82)
+<p>unknown error: call function result missing &apos;value&apos;
+  (Session info: chrome=80.0.3987.122)
+  (Driver info: chromedriver=2.33.506120 (e3e53437346286c0bc2d2dc9aa4915ba81d9023f),platform=Windows NT 10.0.18363 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;PHAEDROS&apos;, ip: &apos;172.16.112.231&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_231&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptSslCerts: true, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.33.506120 (e3e53437346286..., userDataDir: C:\Users\thoma\AppData\Loca...}, cssSelectorsEnabled: true, databaseEnabled: false, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 80.0.3987.122, webStorageEnabled: true}
+Session ID: 4a5696bf8125d40391707b2982a343e9</p>
+sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+<br/>at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+<br/>at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+<br/>at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+<br/>at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
+<br/>at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
+<br/>at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
+<br/>at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:80)
+<br/>at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:44)
+<br/>at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+<br/>at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+<br/>at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+<br/>at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
+<br/>at org.openqa.selenium.remote.RemoteWebElement.clear(RemoteWebElement.java:124)
+<br/>at net.groot.data.TestNgLogin.passInEmail(TestNgLogin.java:39)
 <br/>25 lines not shown
 </div>
 <p class="totop"><a href="#summary">back to summary</a></p>
-<h2 id="m9">net.groot.data.InvocationNewsTest:math</h2>
+<h2 id="m8">net.groot.data.TestNgRegisterData:findRegisterPage</h2>
 <p class="totop"><a href="#summary">back to summary</a></p>
-<h2 id="m10">net.groot.data.InvocationNewsTest:math</h2>
+<h2 id="m9">net.groot.data.TestNgRegister:findRegisterElement</h2>
 <p class="totop"><a href="#summary">back to summary</a></p>
-<h2 id="m11">net.groot.data.InvocationNewsTest:invokeProvider</h2>
-<table cellspacing="0" cellpadding="0" class="result">
-<tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr>
-<tr class="param stripe"><td>1</td>
-<td>a</td>
-</tr>
-</table>
+<h2 id="m10">net.groot.data.TestNgLogin:findLoginPage</h2>
 <p class="totop"><a href="#summary">back to summary</a></p>
-<h2 id="m12">net.groot.data.InvocationNewsTest:invokeProvider</h2>
-<table cellspacing="0" cellpadding="0" class="result">
-<tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr>
-<tr class="param stripe"><td>2</td>
-<td>b</td>
-</tr>
-</table>
+<h2 id="m11">net.groot.data.TestNgRegisterData:confirm</h2>
 <p class="totop"><a href="#summary">back to summary</a></p>
-<h2 id="m13">net.groot.data.InvocationNewsTest:mathError</h2>
-<div style="padding-left:3em">
-<p>For input string: &quot;100A&quot;</p>
-java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
-<br/>at java.lang.Integer.parseInt(Integer.java:580)
-<br/>at java.lang.Integer.parseInt(Integer.java:615)
-<br/>at net.groot.data.InvocationNewsTest.mathError(InvocationNewsTest.java:82)
-<br/>25 lines not shown
-</div>
+<h2 id="m12">net.groot.data.TestNgRegister:confirm</h2>
 <p class="totop"><a href="#summary">back to summary</a></p>
-<h2 id="m14">net.groot.data.InvocationNewsTest:mathError</h2>
-<div style="padding-left:3em">
-<p>For input string: &quot;100A&quot;</p>
-java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
-<br/>at java.lang.Integer.parseInt(Integer.java:580)
-<br/>at java.lang.Integer.parseInt(Integer.java:615)
-<br/>at net.groot.data.InvocationNewsTest.mathError(InvocationNewsTest.java:82)
-<br/>25 lines not shown
-</div>
+<h2 id="m13">net.groot.data.TestNgLogin:confirm</h2>
 <p class="totop"><a href="#summary">back to summary</a></p>
-<h2 id="m15">net.groot.data.InvocationNewsTest:invokeProvider</h2>
-<table cellspacing="0" cellpadding="0" class="result">
-<tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr>
-<tr class="param stripe"><td>1</td>
-<td>a</td>
-</tr>
-</table>
+<h2 id="m14">net.groot.data.TestNgLogin:findLoginElement</h2>
 <p class="totop"><a href="#summary">back to summary</a></p>
-<h2 id="m16">net.groot.data.InvocationNewsTest:invokeProvider</h2>
-<table cellspacing="0" cellpadding="0" class="result">
-<tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr>
-<tr class="param stripe"><td>2</td>
-<td>b</td>
-</tr>
-</table>
+<h2 id="m15">net.groot.data.TestNgRegisterData:findRegisterElement</h2>
 <p class="totop"><a href="#summary">back to summary</a></p>
-<h2 id="m17">net.groot.data.InvocationNewsTest:mathError</h2>
-<div style="padding-left:3em">
-<p>For input string: &quot;100A&quot;</p>
-java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
-<br/>at java.lang.Integer.parseInt(Integer.java:580)
-<br/>at java.lang.Integer.parseInt(Integer.java:615)
-<br/>at net.groot.data.InvocationNewsTest.mathError(InvocationNewsTest.java:82)
-<br/>25 lines not shown
-</div>
-<p class="totop"><a href="#summary">back to summary</a></p>
-<h2 id="m18">net.groot.data.InvocationNewsTest:invokeProvider</h2>
-<table cellspacing="0" cellpadding="0" class="result">
-<tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr>
-<tr class="param stripe"><td>2</td>
-<td>b</td>
-</tr>
-</table>
-<p class="totop"><a href="#summary">back to summary</a></p>
-<h2 id="m19">net.groot.data.InvocationNewsTest:invokeProvider</h2>
-<table cellspacing="0" cellpadding="0" class="result">
-<tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr>
-<tr class="param stripe"><td>1</td>
-<td>a</td>
-</tr>
-</table>
-<p class="totop"><a href="#summary">back to summary</a></p>
-<h2 id="m20">net.groot.data.InvocationNewsTest:mathError</h2>
-<div style="padding-left:3em">
-<p>For input string: &quot;100A&quot;</p>
-java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
-<br/>at java.lang.Integer.parseInt(Integer.java:580)
-<br/>at java.lang.Integer.parseInt(Integer.java:615)
-<br/>at net.groot.data.InvocationNewsTest.mathError(InvocationNewsTest.java:82)
-<br/>25 lines not shown
-</div>
-<p class="totop"><a href="#summary">back to summary</a></p>
-<h2 id="m21">net.groot.data.InvocationNewsTest:mathError</h2>
-<div style="padding-left:3em">
-<p>For input string: &quot;100A&quot;</p>
-java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
-<br/>at java.lang.Integer.parseInt(Integer.java:580)
-<br/>at java.lang.Integer.parseInt(Integer.java:615)
-<br/>at net.groot.data.InvocationNewsTest.mathError(InvocationNewsTest.java:82)
-<br/>25 lines not shown
-</div>
-<p class="totop"><a href="#summary">back to summary</a></p>
-<h2 id="m22">net.groot.data.InvocationNewsTest:mathError</h2>
-<div style="padding-left:3em">
-<p>For input string: &quot;100A&quot;</p>
-java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
-<br/>at java.lang.Integer.parseInt(Integer.java:580)
-<br/>at java.lang.Integer.parseInt(Integer.java:615)
-<br/>at net.groot.data.InvocationNewsTest.mathError(InvocationNewsTest.java:82)
-<br/>25 lines not shown
-</div>
+<h2 id="m16">net.groot.data.TestNgRegister:findRegisterPage</h2>
 <p class="totop"><a href="#summary">back to summary</a></p>
 </body></html>

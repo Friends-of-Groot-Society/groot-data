@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Suite" parallel="false">
+<test name = "CucumberTests">
+	<classes>
+		<class name = "net.groot.CucumberFramework.runner.MainRunner"></class>
+	</classes>
+</test> 
+</suite>  
+ 

@@ -35,9 +35,6 @@ public class UserInitializer implements CommandLineRunner {
 
 			User user = new User();
 
-//
-			user.setTokenId(UUID.randomUUID().toString());
-//			user.setTokenId(faker.idNumber().ssnValid());
 			user.setEmail(faker.internet().emailAddress());
 			user.setPassword(faker.internet().password());
 			user.setfName(faker.howIMetYourMother().character());

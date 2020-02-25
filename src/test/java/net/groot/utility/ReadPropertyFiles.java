@@ -1,4 +1,4 @@
-package net.groot.data;
+package net.groot.utility;
 
 import java.io.FileInputStream;
 import java.io.IOException;
