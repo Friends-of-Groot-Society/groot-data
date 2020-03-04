@@ -56,6 +56,7 @@ public class UserService {
 	 
 	public User getUserByEmail(String email) {
 		Optional<User> requestedUser = userRepository.findByEmail(email);
+		
 		try {
 			return requestedUser.get(); 
 		} catch (Exception e) {

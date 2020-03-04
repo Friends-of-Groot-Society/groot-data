@@ -69,4 +69,12 @@ public class GrootService {
     public void deleteGrootById(Long id) {
         grootRepository.deleteById(id);
     }
+
+	public List<Groot> getGrootByType(String type) {
+		List<Groot> requestedGroot = grootRepository.findByType(type); 
+	        if (requestedGroot.size() == 0) {
+	            throw new GrootNotFoundException(String.format("Groot with type: '%s' not found", type));
+	        } 
+	        return requestedGroot;
+	}
 }

@@ -22,32 +22,32 @@ public class TestNgLogin {
 
 	WebDriver driver;
 
-	@Test(priority=1)
+	@Test(priority=1, groups="pageOpen")
 	public void findLoginPage() throws Throwable {
 		boolean title = driver.findElement(By.className("page-title")).isDisplayed();
 		Assert.assertEquals(true, title);
 	}
 	
-	@Test(priority=2)
+	@Test(priority=2, groups="pageOpen")
 	public void findLoginElement() throws Throwable {
 		WebElement title = driver.findElement(By.className("page-title"));
 		Assert.assertEquals("Sign In", title.getText());
 	}
-	@Test(priority=3, dependsOnMethods={"findLoginPage", "findLoginElement"})
+	@Test(priority=3, groups="elementInput", dependsOnMethods={"findLoginPage", "findLoginElement"})
 	public void passInEmail() throws Throwable {
 
 		 driver.findElement(By.xpath("//*[@id='email']")).clear();
 		 driver.findElement(By.xpath("//*[@id='email']")).sendKeys("user@gmail.com");
 		 
 	}
-	@Test(priority=4, dependsOnMethods="findLoginElement")
+	@Test(priority=4, groups="elementInput", dependsOnMethods="findLoginElement")
 	public void passInPassword() throws Throwable {
 		Thread.sleep(500);
 		driver.findElement(By.xpath("//*[@id='password']")).clear();
 		driver.findElement(By.xpath("//*[@id='password']")).sendKeys("password"); 
 	}
 	
-	@Test(priority=5, dependsOnMethods="findLoginElement")
+	@Test(priority=5, groups="pageOpen", dependsOnMethods="findLoginElement")
 	public void confirm() throws Throwable {
 		Thread.sleep(500);
 		WebElement submitBtn = driver.findElement(By.className("login"));
