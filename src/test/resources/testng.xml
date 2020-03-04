@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <suite name="Suite" parallel="false">
   <test name="UserTestNG">
+  	<groups>
+  		<run>
+  			<include name="pageOpen" />
+  			<include name="submit" />
+  			<exclude name="elementInput" />
+  		</run>	
+  	</groups>
   	<parameter name="env" value="QA" />
   	<parameter name="browser" value="chrome" />
     <parameter name="url" value="http://localhost:4200" />
@@ -12,11 +19,14 @@
 	
 	<classes> 
 	
-		<class name = "net.groot.data.TestNgRegisterData"/>
-		
+		<class name = "net.groot.data.TestNgLogin" /> 
 		<class name = "net.groot.data.TestNgRegister"/>
 		
-		<class name = "net.groot.data.TestNgLogin"/>
+		<class name = "net.groot.data.TestNgRegisterData" >
+			  <methods>
+      			<exclude name="registerPage"/> 
+      		</methods>  
+		</class>
 	</classes>
   </test>  
 

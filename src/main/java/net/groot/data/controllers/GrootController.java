@@ -49,7 +49,12 @@ public class GrootController {
     public ResponseEntity<List<Groot>> getAllGroots() {
         return ResponseEntity.ok(grootService.getAllGroots());
     }
-
+    
+    @GetMapping("/type/{type}")
+    public ResponseEntity<List<Groot>> getAllGrootsByType(@PathVariable("type") String type) {
+        return ResponseEntity.ok(grootService.getGrootByType(type));
+    }
+ 
     @GetMapping("/{id}")
     public ResponseEntity<Groot> getGrootById(@PathVariable("id") Long id) {
         return ResponseEntity.ok(grootService.getGrootById(id));

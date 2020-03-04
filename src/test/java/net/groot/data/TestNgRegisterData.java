@@ -41,6 +41,7 @@ public class TestNgRegisterData {
 	public static Object[][] register() {
 		
 		return new Object[][] {{"fName", "Firstname"}, {"lName", "Lastname"},{"email", "Ganon@gmail.com"},{"password", "password"}};
+
 	}
 	
 	@BeforeSuite
@@ -51,17 +52,19 @@ public class TestNgRegisterData {
 
 	@BeforeClass
 	public void beforeClass() throws Throwable {
-
-	}
-
-	@BeforeMethod
-	public void beforeMethod() throws Throwable {
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
 		driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 //	  driver.get("http://friends-of-groot-society.s3-website-us-east-1.amazonaws.com/");
-		driver.get("http://localhost:4200/register");
+		driver.get("http://localhost:4200");
+		Thread.sleep(500);
+		driver.findElement(By.id("register")).click();
+	}
+
+	@BeforeMethod
+	public void beforeMethod() throws Throwable {
+
 	}
 
 	@BeforeTest
@@ -81,20 +84,22 @@ public class TestNgRegisterData {
 	}
 
 	@Test(priority = 3, dataProvider="getTheData") 
-	public void registerPage(String email, String password, String fName, String lName) throws Throwable {
+	public void registerPage(String fName, String lName, String email, String password  ) throws Throwable {
 		Thread.sleep(1000);
 		System.out.println(email);
+		driver.findElement(By.xpath("//*[@id='fName']")).clear();
+		driver.findElement(By.xpath("//*[@id='fName']")).sendKeys(fName);
+
+		driver.findElement(By.xpath("//*[@id='lName']")).clear();
+		driver.findElement(By.xpath("//*[@id='lName']")).sendKeys(lName);
+		
 		driver.findElement(By.xpath("//*[@id='email']")).clear();
 		driver.findElement(By.xpath("//*[@id='email']")).sendKeys(email);
 
 		driver.findElement(By.xpath("//*[@id='password']")).clear();
 		driver.findElement(By.xpath("//*[@id='password']")).sendKeys(password);
 
-		driver.findElement(By.xpath("//*[@id='fName']")).clear();
-		driver.findElement(By.xpath("//*[@id='fName']")).sendKeys(fName);
-
-		driver.findElement(By.xpath("//*[@id='lName']")).clear();
-		driver.findElement(By.xpath("//*[@id='lName']")).sendKeys(lName);
+	
 
 	}
 

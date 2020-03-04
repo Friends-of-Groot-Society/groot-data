@@ -101,7 +101,7 @@ public class TestNgRegister {
 		Assert.assertEquals(true, submitBtn.isDisplayed());
 		submitBtn.click();
 	}
-	@Test(priority = 8, enabled=false)
+	@Test(priority = 8, groups="submit", enabled=false)
 	public void confirmLeft() throws Throwable {
 		Thread.sleep(500);
 		WebElement submitBtn = driver.findElement(By.className("register"));
