@@ -26,7 +26,7 @@ public class GrootInitializer implements CommandLineRunner {
 
 //        log.info("Starting groot initialization ...");
 
-        for(int i = 0; i < 10; i++) {
+        for(int i = 0; i < 100; i++) {
 
             Groot groot = new Groot(); 
 //            groot.setTitle("War and Peace");
